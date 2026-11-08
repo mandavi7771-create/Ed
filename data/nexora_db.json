@@ -1,0 +1,1960 @@
+{
+  "users": [
+    {
+      "id": "ADM-1001",
+      "fullName": "Super Administrator",
+      "email": "admin@nexoracloud.com",
+      "passwordHash": "Admin@123456",
+      "mobile": "+91 9876543210",
+      "country": "India",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "address": "Nexora Tower, MG Road",
+      "postalCode": "560001",
+      "companyName": "Nexora Cloud Infrastructure Pvt Ltd",
+      "role": "super_admin",
+      "status": "active",
+      "twoFactorEnabled": true,
+      "twoFactorSecret": "654321",
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "updatedAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "ADM-1002",
+      "fullName": "Rohan Sharma",
+      "email": "rohan.tech@nexoracloud.com",
+      "passwordHash": "Staff@123456",
+      "mobile": "+91 9876543211",
+      "country": "India",
+      "state": "Maharashtra",
+      "city": "Mumbai",
+      "address": "BKC Complex",
+      "postalCode": "400051",
+      "role": "tech_manager",
+      "status": "active",
+      "createdAt": "2026-02-01T00:00:00.000Z",
+      "updatedAt": "2026-02-01T00:00:00.000Z"
+    },
+    {
+      "id": "CUST-2001",
+      "fullName": "Vikramaditya Roy",
+      "email": "client@techstart.io",
+      "passwordHash": "Client@123456",
+      "mobile": "+91 9988776655",
+      "country": "India",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "address": "42 Koramangala 4th Block",
+      "postalCode": "560034",
+      "companyName": "TechStart Technologies",
+      "role": "customer",
+      "status": "active",
+      "createdAt": "2026-02-15T10:00:00.000Z",
+      "updatedAt": "2026-02-15T10:00:00.000Z"
+    },
+    {
+      "id": "CUST-1004",
+      "fullName": "Test Customer",
+      "email": "customer.test@gmail.com",
+      "passwordHash": "GOOGLE_AUTH_google_sub_999999",
+      "mobile": "+91 9876543210",
+      "country": "India",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "address": "Verified Google Identity",
+      "postalCode": "560001",
+      "role": "customer",
+      "status": "active",
+      "googleId": "google_sub_999999",
+      "avatarUrl": "https://lh3.googleusercontent.com/a/default-user",
+      "createdAt": "2026-11-08T09:16:07.941Z",
+      "updatedAt": "2026-11-08T09:16:12.372Z"
+    },
+    {
+      "id": "CUST-1005",
+      "fullName": "Priya Patel",
+      "email": "priya.patel@techstart.in",
+      "passwordHash": "GOOGLE_AUTH_google-sub-291827401924",
+      "mobile": "+91 9876543210",
+      "country": "India",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "address": "Verified Google Identity",
+      "postalCode": "560001",
+      "role": "customer",
+      "status": "active",
+      "googleId": "google-sub-291827401924",
+      "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80",
+      "createdAt": "2026-11-08T09:46:46.952Z",
+      "updatedAt": "2026-11-08T09:46:46.952Z"
+    }
+  ],
+  "plans": [
+    {
+      "id": "plan-special",
+      "name": "Special Offer",
+      "slug": "special-offer",
+      "price": 1,
+      "renewalPrice": 499,
+      "validity": "1 Year",
+      "category": "special",
+      "description": "Promotional 1-Year Cloud Hosting package. Limited availability for emerging businesses.",
+      "features": [
+        "1 Website",
+        "10 GB High-Speed NVMe Storage",
+        "Unmetered Bandwidth",
+        "Free SSL Certificate",
+        "Custom DNS Manager",
+        "1-Click ZIP Deployment"
+      ],
+      "websitesAllowed": 1,
+      "storageGB": 10,
+      "bandwidthGB": -1,
+      "ramMB": 1024,
+      "cpuCores": 1,
+      "freeDomain": false,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": false,
+      "isPromotional": true,
+      "isActive": true,
+      "quotaRemaining": 48
+    },
+    {
+      "id": "plan-basic",
+      "name": "Basic Hosting",
+      "slug": "basic-hosting",
+      "price": 499,
+      "renewalPrice": 599,
+      "validity": "1 Year",
+      "category": "shared",
+      "description": "Essential hosting for personal blogs, portfolios, and single landing pages.",
+      "features": [
+        "1 Website",
+        "25 GB NVMe SSD",
+        "100 GB Bandwidth",
+        "Free Let's Encrypt SSL",
+        "2 Subdomains",
+        "Web-based File Manager"
+      ],
+      "websitesAllowed": 1,
+      "storageGB": 25,
+      "bandwidthGB": 100,
+      "ramMB": 1024,
+      "cpuCores": 1,
+      "freeDomain": false,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    },
+    {
+      "id": "plan-standard",
+      "name": "Standard Hosting",
+      "slug": "standard-hosting",
+      "price": 699,
+      "renewalPrice": 799,
+      "validity": "1 Year",
+      "category": "shared",
+      "description": "Balanced power and speed for freelancers and growing sites.",
+      "features": [
+        "3 Websites",
+        "50 GB NVMe SSD",
+        "250 GB Bandwidth",
+        "Free SSL for all domains",
+        "5 Subdomains",
+        "File Manager & ZIP Deploy"
+      ],
+      "websitesAllowed": 3,
+      "storageGB": 50,
+      "bandwidthGB": 250,
+      "ramMB": 2048,
+      "cpuCores": 2,
+      "freeDomain": false,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    },
+    {
+      "id": "plan-premium",
+      "name": "Premium Hosting",
+      "slug": "premium-hosting",
+      "price": 799,
+      "renewalPrice": 999,
+      "validity": "1 Year",
+      "category": "shared",
+      "description": "High performance for established creators and commercial portfolios.",
+      "features": [
+        "10 Websites",
+        "100 GB NVMe SSD",
+        "Unmetered Bandwidth",
+        "Free .com/.in Domain Included",
+        "Unlimited SSL Certificates",
+        "Automated Health Checks"
+      ],
+      "websitesAllowed": 10,
+      "storageGB": 100,
+      "bandwidthGB": -1,
+      "ramMB": 4096,
+      "cpuCores": 2,
+      "freeDomain": true,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    },
+    {
+      "id": "plan-business",
+      "name": "Business Hosting",
+      "slug": "business-hosting",
+      "price": 899,
+      "renewalPrice": 1199,
+      "validity": "1 Year",
+      "category": "business",
+      "description": "Engineered for e-commerce, corporate websites, and traffic surges.",
+      "features": [
+        "50 Websites",
+        "150 GB Ultra NVMe",
+        "Unmetered Bandwidth",
+        "Free Domain for 1st Year",
+        "Free Wildcard SSL",
+        "Priority Support Queue",
+        "Daily Automated Backups"
+      ],
+      "websitesAllowed": 50,
+      "storageGB": 150,
+      "bandwidthGB": -1,
+      "ramMB": 6144,
+      "cpuCores": 4,
+      "freeDomain": true,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    },
+    {
+      "id": "plan-professional",
+      "name": "Professional Hosting",
+      "slug": "professional-hosting",
+      "price": 1000,
+      "renewalPrice": 1499,
+      "validity": "1 Year",
+      "category": "professional",
+      "description": "Heavy duty cloud performance with isolated CPU and memory quotas.",
+      "features": [
+        "100 Websites",
+        "200 GB NVMe Storage",
+        "Unmetered Bandwidth",
+        "Dedicated IP Option",
+        "Free Domain & SSL",
+        "Instant ZIP Deployment",
+        "24/7 Priority Support"
+      ],
+      "websitesAllowed": 100,
+      "storageGB": 200,
+      "bandwidthGB": -1,
+      "ramMB": 8192,
+      "cpuCores": 4,
+      "freeDomain": true,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    },
+    {
+      "id": "plan-advanced",
+      "name": "Advanced Hosting",
+      "slug": "advanced-hosting",
+      "price": 5000,
+      "renewalPrice": 5999,
+      "validity": "1 Year",
+      "category": "professional",
+      "description": "Multi-instance cluster configuration for SaaS platforms and digital agencies.",
+      "features": [
+        "Unlimited Websites",
+        "400 GB NVMe SSD",
+        "Unmetered Bandwidth",
+        "Dedicated Static IP",
+        "Free Domain & Multi-domain SSL",
+        "SSH & Custom Environment API",
+        "SLA 99.95%"
+      ],
+      "websitesAllowed": 999,
+      "storageGB": 400,
+      "bandwidthGB": -1,
+      "ramMB": 16384,
+      "cpuCores": 8,
+      "freeDomain": true,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    },
+    {
+      "id": "plan-enterprise",
+      "name": "Enterprise Hosting",
+      "slug": "enterprise-hosting",
+      "price": 10000,
+      "renewalPrice": 11999,
+      "validity": "1 Year",
+      "category": "enterprise",
+      "description": "Dedicated cloud computing resources with guaranteed compute cycles and isolated kernel.",
+      "features": [
+        "Unlimited Websites",
+        "800 GB NVMe Enterprise",
+        "Unmetered Bandwidth",
+        "2 Dedicated IPv4",
+        "Enterprise Grade DDoS Shield",
+        "Custom Nameservers",
+        "Dedicated Account Manager"
+      ],
+      "websitesAllowed": 999,
+      "storageGB": 800,
+      "bandwidthGB": -1,
+      "ramMB": 32768,
+      "cpuCores": 16,
+      "freeDomain": true,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    },
+    {
+      "id": "plan-enterprise-plus",
+      "name": "Enterprise Plus",
+      "slug": "enterprise-plus",
+      "price": 15000,
+      "renewalPrice": 17500,
+      "validity": "1 Year",
+      "category": "enterprise",
+      "description": "Scalable multi-cloud deployment with automated failover and geo-redundancy.",
+      "features": [
+        "Unlimited Websites",
+        "1.5 TB NVMe Storage",
+        "Unmetered Bandwidth",
+        "4 Dedicated IPs",
+        "Automated Multi-Region Failover",
+        "Custom Security Rules",
+        "15-min Support Response SLA"
+      ],
+      "websitesAllowed": 999,
+      "storageGB": 1500,
+      "bandwidthGB": -1,
+      "ramMB": 49152,
+      "cpuCores": 24,
+      "freeDomain": true,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    },
+    {
+      "id": "plan-pro-business",
+      "name": "Pro Business",
+      "slug": "pro-business",
+      "price": 30000,
+      "renewalPrice": 34000,
+      "validity": "1 Year",
+      "category": "enterprise",
+      "description": "Mission-critical enterprise cloud for financial services, hospitals and massive traffic.",
+      "features": [
+        "Unlimited Websites",
+        "3 TB NVMe Storage",
+        "Unmetered 10Gbps Uplink",
+        "8 Dedicated IPs",
+        "Custom WAF & Compliance Shield",
+        "Real-time Storage Snapshot Replicas",
+        "Direct Engineer Hotline"
+      ],
+      "websitesAllowed": 999,
+      "storageGB": 3000,
+      "bandwidthGB": -1,
+      "ramMB": 65536,
+      "cpuCores": 32,
+      "freeDomain": true,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    },
+    {
+      "id": "plan-ultimate-enterprise",
+      "name": "Ultimate Enterprise",
+      "slug": "ultimate-enterprise",
+      "price": 40000,
+      "renewalPrice": 45000,
+      "validity": "1 Year",
+      "category": "enterprise",
+      "description": "Unrestricted bare-metal cloud infrastructure with custom hardware provisioning and white-glove engineering.",
+      "features": [
+        "Unlimited Websites",
+        "6 TB NVMe Enterprise Array",
+        "Unmetered Dedicated Pipe",
+        "16 Dedicated IPs",
+        "Custom Kernel Tuning & Extensions",
+        "Disaster Recovery Warm Standby",
+        "Executive Concierge Operations"
+      ],
+      "websitesAllowed": 999,
+      "storageGB": 6000,
+      "bandwidthGB": -1,
+      "ramMB": 131072,
+      "cpuCores": 64,
+      "freeDomain": true,
+      "freeSsl": true,
+      "freeDns": true,
+      "dailyBackups": true,
+      "isPromotional": false,
+      "isActive": true
+    }
+  ],
+  "domains": [
+    {
+      "id": "DOM-3001",
+      "domainName": "techstartapp.com",
+      "customerId": "CUST-2001",
+      "customerEmail": "client@techstart.io",
+      "registrar": "ResellerClub Gateway API",
+      "registrarTxId": "RC-TXN-984210",
+      "registrationDate": "2026-02-15T10:15:00.000Z",
+      "expiryDate": "2027-02-15T10:15:00.000Z",
+      "renewalDate": "2027-02-15T10:15:00.000Z",
+      "registrationPeriodYears": 1,
+      "registrationPrice": 849,
+      "renewalPrice": 999,
+      "status": "active",
+      "autoRenew": true,
+      "privacyProtected": true,
+      "locked": true,
+      "eppCode": "NEX-89YTA-4",
+      "nameservers": [
+        "ns1.nexoracloud.com",
+        "ns2.nexoracloud.com"
+      ],
+      "connectedHostingId": "HOST-4001",
+      "registrantDetails": {
+        "firstName": "Vikramaditya",
+        "lastName": "Roy",
+        "company": "TechStart Technologies",
+        "email": "client@techstart.io",
+        "mobile": "+91 9988776655",
+        "address": "42 Koramangala 4th Block",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560034",
+        "country": "India"
+      }
+    },
+    {
+      "id": "DOM-6294",
+      "domainName": "india.in",
+      "customerId": "CUST-2001",
+      "customerEmail": "client@techstart.io",
+      "registrar": "Nexora Registrar Gateway (Authoritative)",
+      "registrarTxId": "TXN-REG-MW7HFLD0-6850",
+      "registrationDate": "2026-11-08T06:59:49.092Z",
+      "expiryDate": "2027-11-08T06:59:49.092Z",
+      "renewalDate": "2027-11-08T06:59:49.092Z",
+      "registrationPeriodYears": 1,
+      "registrationPrice": 499,
+      "renewalPrice": 649,
+      "status": "active",
+      "autoRenew": true,
+      "privacyProtected": true,
+      "locked": true,
+      "eppCode": "EPP-BGA5PY56!",
+      "nameservers": [
+        "ns1.nexoracloud.com",
+        "ns2.nexoracloud.com"
+      ],
+      "registrantDetails": {
+        "firstName": "Vikramaditya",
+        "lastName": "Roy",
+        "company": "TechStart Technologies",
+        "email": "client@techstart.io",
+        "mobile": "+91 9988776655",
+        "address": "42 Koramangala 4th Block",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560034",
+        "country": "India"
+      }
+    },
+    {
+      "id": "DOM-1951",
+      "domainName": "cloudstartup2026.com",
+      "customerId": "CUST-2001",
+      "customerEmail": "client@techstart.io",
+      "registrar": "Nexora Authoritative Registry Connector",
+      "registrarTxId": "TXN-REG-MW7I402D-6439",
+      "registrationDate": "2026-11-08T07:18:47.893Z",
+      "expiryDate": "2027-11-08T07:18:47.893Z",
+      "renewalDate": "2027-11-08T07:18:47.893Z",
+      "registrationPeriodYears": 1,
+      "registrationPrice": 1,
+      "renewalPrice": 999,
+      "status": "active",
+      "autoRenew": true,
+      "privacyProtected": true,
+      "locked": true,
+      "eppCode": "EPP-ZKEOI85P!",
+      "nameservers": [
+        "ns1.nexoracloud.com",
+        "ns2.nexoracloud.com"
+      ],
+      "registrantDetails": {
+        "firstName": "Vikramaditya",
+        "lastName": "Roy",
+        "company": "TechStart Technologies",
+        "email": "client@techstart.io",
+        "mobile": "+91 9988776655",
+        "address": "42 Koramangala",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560034",
+        "country": "India"
+      }
+    },
+    {
+      "id": "DOM-7460",
+      "domainName": "mandavitestbusiness.com",
+      "customerId": "CUST-2001",
+      "customerEmail": "client@techstart.io",
+      "registrar": "Nexora Authoritative ICANN Registry Connector",
+      "registrarTxId": "TXN-ICANN-MW7NGEVI-6741",
+      "registrationDate": "2026-11-08T09:48:25.038Z",
+      "expiryDate": "2027-11-08T09:48:25.038Z",
+      "renewalDate": "2027-11-08T09:48:25.038Z",
+      "registrationPeriodYears": 1,
+      "registrationPrice": 849,
+      "renewalPrice": 999,
+      "status": "active",
+      "autoRenew": true,
+      "privacyProtected": true,
+      "locked": true,
+      "eppCode": "EPP-OWMZDD1A!",
+      "nameservers": [
+        "ns1.nexoracloud.com",
+        "ns2.nexoracloud.com"
+      ],
+      "registrantDetails": {
+        "firstName": "Vikramaditya",
+        "lastName": "Roy",
+        "company": "",
+        "email": "client@techstart.io",
+        "mobile": "+91 9876543210",
+        "address": "MG Road",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560001",
+        "country": "India"
+      }
+    }
+  ],
+  "hosting": [
+    {
+      "id": "HOST-4001",
+      "customerId": "CUST-2001",
+      "customerEmail": "client@techstart.io",
+      "planId": "plan-business",
+      "planName": "Business Hosting",
+      "domainName": "techstartapp.com",
+      "serverNode": "blr-node-04.nexoracloud.net",
+      "serverIp": "159.65.132.88",
+      "status": "active",
+      "startDate": "2026-02-15T10:20:00.000Z",
+      "expiryDate": "2027-02-15T10:20:00.000Z",
+      "autoRenew": true,
+      "storageUsedMB": 12.4,
+      "storageTotalMB": 153600,
+      "bandwidthUsedGB": 18.2,
+      "bandwidthTotalGB": 9999,
+      "documentRoot": "/public_html",
+      "sslStatus": "active",
+      "sslIssuer": "Let's Encrypt Authority X3",
+      "sslExpiry": "2027-02-06T09:15:04.819Z",
+      "deploymentStatus": "live",
+      "lastDeployedAt": "2026-02-15T10:35:00.000Z",
+      "deploymentLogs": [
+        {
+          "timestamp": "2026-02-15T10:20:00.000Z",
+          "level": "info",
+          "message": "Hosting instance container initialized."
+        },
+        {
+          "timestamp": "2026-02-15T10:21:00.000Z",
+          "level": "info",
+          "message": "DNS and Apache virtual host created."
+        },
+        {
+          "timestamp": "2026-02-15T10:22:00.000Z",
+          "level": "info",
+          "message": "Let's Encrypt SSL certificate issued and installed."
+        },
+        {
+          "timestamp": "2026-02-15T10:35:00.000Z",
+          "level": "info",
+          "message": "ZIP archive successfully extracted. 14 files published."
+        },
+        {
+          "timestamp": "2026-02-15T10:35:10.000Z",
+          "level": "info",
+          "message": "Health check probe HTTP/200 OK passed."
+        }
+      ],
+      "ftpUsername": "techstart_usr",
+      "ftpHost": "ftp.techstartapp.com"
+    }
+  ],
+  "dns": [
+    {
+      "id": "DNS-1",
+      "domainId": "DOM-3001",
+      "domainName": "techstartapp.com",
+      "type": "A",
+      "name": "@",
+      "content": "159.65.132.88",
+      "ttl": 3600,
+      "createdAt": "2026-02-15T10:20:00.000Z"
+    },
+    {
+      "id": "DNS-2",
+      "domainId": "DOM-3001",
+      "domainName": "techstartapp.com",
+      "type": "CNAME",
+      "name": "www",
+      "content": "techstartapp.com",
+      "ttl": 3600,
+      "createdAt": "2026-02-15T10:20:00.000Z"
+    },
+    {
+      "id": "DNS-3",
+      "domainId": "DOM-3001",
+      "domainName": "techstartapp.com",
+      "type": "MX",
+      "name": "@",
+      "content": "mail.techstartapp.com",
+      "priority": 10,
+      "ttl": 3600,
+      "createdAt": "2026-02-15T10:20:00.000Z"
+    },
+    {
+      "id": "DNS-4",
+      "domainId": "DOM-3001",
+      "domainName": "techstartapp.com",
+      "type": "TXT",
+      "name": "@",
+      "content": "v=spf1 include:_spf.nexoracloud.com ~all",
+      "ttl": 3600,
+      "createdAt": "2026-02-15T10:20:00.000Z"
+    },
+    {
+      "id": "DNS-1794121189093-1",
+      "domainId": "DOM-6294",
+      "domainName": "india.in",
+      "type": "A",
+      "name": "@",
+      "content": "159.65.132.88",
+      "ttl": 3600,
+      "createdAt": "2026-11-08T06:59:49.092Z"
+    },
+    {
+      "id": "DNS-1794121189093-2",
+      "domainId": "DOM-6294",
+      "domainName": "india.in",
+      "type": "CNAME",
+      "name": "www",
+      "content": "india.in",
+      "ttl": 3600,
+      "createdAt": "2026-11-08T06:59:49.092Z"
+    },
+    {
+      "id": "DNS-1794122327894-1",
+      "domainId": "DOM-1951",
+      "domainName": "cloudstartup2026.com",
+      "type": "A",
+      "name": "@",
+      "content": "159.65.132.88",
+      "ttl": 3600,
+      "createdAt": "2026-11-08T07:18:47.893Z"
+    },
+    {
+      "id": "DNS-1794122327894-2",
+      "domainId": "DOM-1951",
+      "domainName": "cloudstartup2026.com",
+      "type": "CNAME",
+      "name": "www",
+      "content": "cloudstartup2026.com",
+      "ttl": 3600,
+      "createdAt": "2026-11-08T07:18:47.893Z"
+    },
+    {
+      "id": "DNS-1794131305039-1",
+      "domainId": "DOM-7460",
+      "domainName": "mandavitestbusiness.com",
+      "type": "A",
+      "name": "@",
+      "content": "159.65.132.88",
+      "ttl": 3600,
+      "createdAt": "2026-11-08T09:48:25.038Z"
+    },
+    {
+      "id": "DNS-1794131305040-2",
+      "domainId": "DOM-7460",
+      "domainName": "mandavitestbusiness.com",
+      "type": "CNAME",
+      "name": "www",
+      "content": "mandavitestbusiness.com",
+      "ttl": 3600,
+      "createdAt": "2026-11-08T09:48:25.038Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-2026-101",
+      "customerId": "CUST-2001",
+      "customerName": "Vikramaditya Roy",
+      "customerEmail": "client@techstart.io",
+      "type": "hosting",
+      "itemTitle": "Business Hosting (1 Year)",
+      "itemId": "plan-business",
+      "subtotal": 899,
+      "taxRate": 0.18,
+      "taxAmount": 161.82,
+      "discountAmount": 0,
+      "totalAmount": 1060.82,
+      "currency": "INR",
+      "paymentStatus": "successful",
+      "serviceStatus": "active",
+      "paymentId": "PAY-8801",
+      "createdAt": "2026-02-15T10:10:00.000Z",
+      "timeline": [
+        {
+          "timestamp": "2026-02-15T10:10:00.000Z",
+          "status": "Order Placed",
+          "note": "Customer initialized order for Business Hosting"
+        },
+        {
+          "timestamp": "2026-02-15T10:12:00.000Z",
+          "status": "Payment Verified",
+          "note": "UPI transaction verified via Razorpay ID rzp_pay_90912"
+        },
+        {
+          "timestamp": "2026-02-15T10:13:00.000Z",
+          "status": "Provisioned",
+          "note": "Server directory /storage/hosting/CUST-2001/HOST-4001 allocated"
+        }
+      ]
+    },
+    {
+      "id": "ORD-2026-8640",
+      "customerId": "CUST-2001",
+      "customerName": "Vikramaditya Roy",
+      "customerEmail": "client@techstart.io",
+      "type": "domain",
+      "itemTitle": "Domain Registration: india.in (1 Year)",
+      "itemId": "india.in",
+      "subtotal": 499,
+      "taxRate": 0.18,
+      "taxAmount": 89.82,
+      "discountAmount": 0,
+      "totalAmount": 588.82,
+      "currency": "INR",
+      "paymentStatus": "successful",
+      "serviceStatus": "provisioning",
+      "createdAt": "2026-11-08T06:59:25.952Z",
+      "timeline": [
+        {
+          "timestamp": "2026-11-08T06:59:25.952Z",
+          "status": "Order Created",
+          "note": "Customer created order for Domain Registration: india.in (1 Year)"
+        },
+        {
+          "timestamp": "2026-11-08T06:59:48.843Z",
+          "status": "Payment Verified",
+          "note": "Verified ₹588.82 via UPI (pay_NxRmw7hfl63gtis)"
+        }
+      ],
+      "paymentId": "PAY-4900"
+    },
+    {
+      "id": "ORD-2026-2368",
+      "customerId": "CUST-2001",
+      "customerName": "Vikramaditya Roy",
+      "customerEmail": "client@techstart.io",
+      "type": "hosting",
+      "itemTitle": "Special Offer (1 Year NVMe Cloud)",
+      "itemId": "plan-special",
+      "subtotal": 1,
+      "taxRate": 0.18,
+      "taxAmount": 0.18,
+      "discountAmount": 0,
+      "totalAmount": 1.18,
+      "currency": "INR",
+      "paymentStatus": "failed",
+      "serviceStatus": "cancelled",
+      "createdAt": "2026-11-08T07:01:34.071Z",
+      "timeline": [
+        {
+          "timestamp": "2026-11-08T07:01:34.071Z",
+          "status": "Order Created",
+          "note": "Customer created order for Special Offer (1 Year NVMe Cloud)"
+        },
+        {
+          "timestamp": "2026-11-08T09:15:04.820Z",
+          "status": "Payment Failed",
+          "note": "Order payment intent expired without gateway confirmation after 2 hours."
+        }
+      ]
+    },
+    {
+      "id": "ORD-2026-3172",
+      "customerId": "CUST-2001",
+      "customerName": "Vikramaditya Roy",
+      "customerEmail": "client@techstart.io",
+      "type": "domain",
+      "itemTitle": "Domain Registration: mandavitestbusiness.com (1 Year)",
+      "itemId": "mandavitestbusiness.com",
+      "subtotal": 849,
+      "taxRate": 0.18,
+      "taxAmount": 122.22,
+      "discountAmount": 170,
+      "totalAmount": 801.22,
+      "currency": "INR",
+      "paymentStatus": "successful",
+      "serviceStatus": "active",
+      "createdAt": "2026-11-08T09:47:49.380Z",
+      "timeline": [
+        {
+          "timestamp": "2026-11-08T09:47:49.380Z",
+          "status": "Order Created",
+          "note": "Customer created order for Domain Registration: mandavitestbusiness.com (1 Year) with coupon DOMAIN20NOV"
+        },
+        {
+          "timestamp": "2026-11-08T09:48:21.265Z",
+          "status": "Payment Successful",
+          "note": "Confirmed payment of ₹801.22 via UPI (pay_NxRmw7ngbyp264i)"
+        },
+        {
+          "timestamp": "2026-11-08T09:48:25.038Z",
+          "status": "Domain Active",
+          "note": "Authoritatively confirmed by Nexora Authoritative ICANN Registry Connector. Registry Transaction ID: TXN-ICANN-MW7NGEVI-6741"
+        }
+      ],
+      "paymentId": "PAY-4470"
+    }
+  ],
+  "payments": [
+    {
+      "id": "PAY-8801",
+      "orderId": "ORD-2026-101",
+      "customerId": "CUST-2001",
+      "customerEmail": "client@techstart.io",
+      "amount": 1060.82,
+      "currency": "INR",
+      "gateway": "Razorpay",
+      "gatewayOrderId": "order_NxR90128",
+      "gatewayPaymentId": "pay_NxR891283",
+      "method": "UPI",
+      "methodDetails": "UPI QR / UPI Intent (techstart@okaxis)",
+      "status": "successful",
+      "idempotencyKey": "idemp-8912739102",
+      "createdAt": "2026-02-15T10:12:00.000Z"
+    },
+    {
+      "id": "PAY-4900",
+      "orderId": "ORD-2026-8640",
+      "customerId": "CUST-2001",
+      "customerEmail": "client@techstart.io",
+      "amount": 588.82,
+      "currency": "INR",
+      "gateway": "Razorpay",
+      "gatewayOrderId": "order_NxRmw7hf3i9qncs",
+      "gatewayPaymentId": "pay_NxRmw7hfl63gtis",
+      "method": "UPI",
+      "methodDetails": "UPI Gateway Payment",
+      "status": "successful",
+      "idempotencyKey": "idemp_ORD-2026-8640_1794121188238",
+      "createdAt": "2026-11-08T06:59:48.843Z"
+    },
+    {
+      "id": "PAY-4470",
+      "orderId": "ORD-2026-3172",
+      "customerId": "CUST-2001",
+      "customerEmail": "client@techstart.io",
+      "amount": 801.22,
+      "currency": "INR",
+      "gateway": "Razorpay",
+      "gatewayOrderId": "order_NxR1794131301265",
+      "gatewayPaymentId": "pay_NxRmw7ngbyp264i",
+      "method": "UPI",
+      "methodDetails": "UPI Authoritative Gateway",
+      "status": "successful",
+      "idempotencyKey": "idemp_1794131301265",
+      "createdAt": "2026-11-08T09:48:21.265Z"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "TIK-501",
+      "customerId": "CUST-2001",
+      "customerName": "Vikramaditya Roy",
+      "customerEmail": "client@techstart.io",
+      "category": "Website Deployment",
+      "subject": "Custom Node.js runtime compatibility inquiry",
+      "priority": "medium",
+      "status": "in_progress",
+      "assignedStaffId": "ADM-1002",
+      "assignedStaffName": "Rohan Sharma",
+      "createdAt": "2026-02-16T11:00:00.000Z",
+      "updatedAt": "2026-11-08T06:58:26.918Z",
+      "messages": [
+        {
+          "id": "MSG-1",
+          "senderId": "CUST-2001",
+          "senderName": "Vikramaditya Roy",
+          "senderRole": "customer",
+          "message": "Hello Nexora team, does Business Hosting support Node.js apps or only static HTML/CSS/JS and PHP?",
+          "createdAt": "2026-02-16T11:00:00.000Z"
+        },
+        {
+          "id": "MSG-2",
+          "senderId": "ADM-1002",
+          "senderName": "Rohan Sharma",
+          "senderRole": "staff",
+          "message": "Hi Vikramaditya! Business Hosting natively runs static web apps (HTML, CSS, JS, Vite dist builds) and PHP 8.2+. For full Node.js background services, our Advanced Hosting (₹5,000/yr) includes dedicated Node.js and PM2 cluster support.",
+          "createdAt": "2026-02-16T11:45:00.000Z"
+        },
+        {
+          "id": "MSG-3",
+          "senderId": "CUST-2001",
+          "senderName": "Vikramaditya Roy",
+          "senderRole": "customer",
+          "message": "Understood, thank you! I will deploy the React Vite production build as static HTML/JS for now.",
+          "createdAt": "2026-02-16T12:15:00.000Z"
+        },
+        {
+          "id": "MSG-1794121106918",
+          "senderId": "CUST-2001",
+          "senderName": "Vikramaditya Roy",
+          "senderRole": "customer",
+          "message": "Hindi",
+          "createdAt": "2026-11-08T06:58:26.918Z"
+        }
+      ]
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "LOG-1794131323529",
+      "adminId": "ADM-1001",
+      "adminEmail": "admin@nexoracloud.com",
+      "action": "ADMIN_QR_UPLOADED",
+      "entityType": "settings",
+      "entityId": "QR-1794131323528",
+      "newValue": {
+        "name": "HDFC Bank Official Merchant QR",
+        "isActive": false
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-08T09:48:43.529Z"
+    },
+    {
+      "id": "LOG-1794131305044",
+      "adminId": "SYSTEM_REGISTRY",
+      "adminEmail": "registrar@nexoracloud.com",
+      "action": "DOMAIN_ACTIVATED_STEP8",
+      "entityType": "domain",
+      "entityId": "DOM-7460",
+      "newValue": {
+        "domainName": "mandavitestbusiness.com",
+        "registrarTxId": "TXN-ICANN-MW7NGEVI-6741",
+        "orderId": "ORD-2026-3172"
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-08T09:48:25.038Z"
+    },
+    {
+      "id": "LOG-1794131206993",
+      "adminId": "SYSTEM",
+      "adminEmail": "system@nexoracloud.com",
+      "action": "CUSTOMER_GOOGLE_REGISTERED",
+      "entityType": "customer",
+      "entityId": "CUST-1005",
+      "newValue": {
+        "email": "priya.patel@techstart.in",
+        "fullName": "Priya Patel",
+        "googleId": "google-sub-291827401924"
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-08T09:46:46.993Z"
+    },
+    {
+      "id": "LOG-1794130569589",
+      "adminId": "ADM-1001",
+      "adminEmail": "admin@nexoracloud.com",
+      "action": "PROMO_DOMAIN_OFFER_CONFIGURED",
+      "entityType": "settings",
+      "entityId": "PROMO-DOM-1",
+      "previousValue": {
+        "id": "PROMO-DOM-1",
+        "title": "Special ₹1 Domain Registration Offer",
+        "isEnabled": true,
+        "maxOrders": 500,
+        "ordersClaimed": 43,
+        "minRegistrationPeriodYears": 1,
+        "allowPlatformSubsidy": true,
+        "eligibleTlds": [
+          ".com",
+          ".in",
+          ".net",
+          ".org",
+          ".co.in",
+          ".online",
+          ".store",
+          ".tech",
+          ".site",
+          ".xyz"
+        ],
+        "promotionalPrice": 1,
+        "customerEligibility": "all"
+      },
+      "newValue": {
+        "id": "PROMO-DOM-1",
+        "title": "Special ₹1 Domain Registration Offer",
+        "isEnabled": true,
+        "maxOrders": 500,
+        "ordersClaimed": 43,
+        "minRegistrationPeriodYears": 1,
+        "allowPlatformSubsidy": true,
+        "eligibleTlds": [
+          ".com",
+          ".in",
+          ".net",
+          ".org",
+          ".co.in",
+          ".online",
+          ".store",
+          ".tech",
+          ".site",
+          ".xyz"
+        ],
+        "promotionalPrice": 1,
+        "customerEligibility": "all",
+        "startDate": "2026-01-01",
+        "endDate": "2026-12-31",
+        "customRenewalPrices": {},
+        "termsAndConditions": ""
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-08T09:36:09.589Z"
+    },
+    {
+      "id": "LOG-1794129367942",
+      "adminId": "SYSTEM",
+      "adminEmail": "system@nexoracloud.com",
+      "action": "CUSTOMER_GOOGLE_REGISTERED",
+      "entityType": "customer",
+      "entityId": "CUST-1004",
+      "newValue": {
+        "email": "customer.test@gmail.com",
+        "fullName": "Test Customer",
+        "googleId": "google_sub_999999"
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-08T09:16:07.942Z"
+    },
+    {
+      "id": "LOG-1794122327895",
+      "adminId": "CUST-2001",
+      "adminEmail": "client@techstart.io",
+      "action": "DOMAIN_REGISTERED",
+      "entityType": "domain",
+      "entityId": "DOM-1951",
+      "newValue": {
+        "domainName": "cloudstartup2026.com",
+        "registrarTxId": "TXN-REG-MW7I402D-6439"
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-08T07:18:47.893Z"
+    },
+    {
+      "id": "LOG-1794122263255",
+      "adminId": "ADM-1001",
+      "adminEmail": "admin@nexoracloud.com",
+      "action": "PROMO_DOMAIN_OFFER_CONFIGURED",
+      "entityType": "settings",
+      "entityId": "PROMO-DOM-1",
+      "previousValue": {
+        "id": "PROMO-DOM-1",
+        "title": "Special ₹1 Domain Registration Offer",
+        "maxOrders": 400,
+        "ordersClaimed": 42,
+        "minRegistrationPeriodYears": 2
+      },
+      "newValue": {
+        "id": "PROMO-DOM-1",
+        "title": "Special ₹1 Domain Registration Offer",
+        "isEnabled": true,
+        "maxOrders": 500,
+        "ordersClaimed": 42,
+        "minRegistrationPeriodYears": 1,
+        "allowPlatformSubsidy": true
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-08T07:17:43.255Z"
+    },
+    {
+      "id": "LOG-1794122258746",
+      "adminId": "ADM-1001",
+      "adminEmail": "admin@nexoracloud.com",
+      "action": "PROMO_DOMAIN_OFFER_CONFIGURED",
+      "entityType": "settings",
+      "entityId": "PROMO-DOM-1",
+      "previousValue": {
+        "id": "PROMO-DOM-1",
+        "title": "Special ₹1 Domain Registration Offer",
+        "isEnabled": true,
+        "promotionalPrice": 1,
+        "eligibleTlds": [
+          ".com",
+          ".in",
+          ".net",
+          ".org",
+          ".co.in",
+          ".online",
+          ".store",
+          ".tech",
+          ".site",
+          ".xyz"
+        ],
+        "startDate": "2026-01-01",
+        "endDate": "2026-12-31",
+        "maxOrders": 500,
+        "ordersClaimed": 42,
+        "customerEligibility": "all",
+        "minRegistrationPeriodYears": 1,
+        "allowPlatformSubsidy": true,
+        "customRenewalPrices": {
+          ".com": 999,
+          ".in": 649,
+          ".net": 1149,
+          ".org": 1099,
+          ".co.in": 549,
+          ".online": 1499,
+          ".store": 1899,
+          ".tech": 1999,
+          ".site": 1399,
+          ".xyz": 999
+        },
+        "termsAndConditions": "Promotional ₹1 domain registration offer is valid on select TLDs. Subsequent year renewals apply at standard rates. 18% GST itemized transparently. No hidden charges or unauthorized add-ons. Domain activation requires authoritative registry confirmation."
+      },
+      "newValue": {
+        "id": "PROMO-DOM-1",
+        "title": "Special ₹1 Domain Registration Offer",
+        "maxOrders": 400,
+        "ordersClaimed": 42,
+        "minRegistrationPeriodYears": 2
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-08T07:17:38.747Z"
+    },
+    {
+      "id": "LOG-1794121189094",
+      "adminId": "CUST-2001",
+      "adminEmail": "client@techstart.io",
+      "action": "DOMAIN_REGISTERED",
+      "entityType": "domain",
+      "entityId": "DOM-6294",
+      "newValue": {
+        "domainName": "india.in",
+        "registrarTxId": "TXN-REG-MW7HFLD0-6850"
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-08T06:59:49.092Z"
+    },
+    {
+      "id": "LOG-1",
+      "adminId": "ADM-1001",
+      "adminEmail": "admin@nexoracloud.com",
+      "action": "PLATFORM_INITIALIZATION",
+      "entityType": "settings",
+      "entityId": "SYSTEM",
+      "newValue": {
+        "brand": "Nexora Cloud",
+        "status": "initialized"
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "NOTIF-1794131305043",
+      "recipientEmail": "client@techstart.io",
+      "recipientId": "CUST-2001",
+      "type": "DOMAIN_ACTIVATED",
+      "subject": "Domain Activated: mandavitestbusiness.com",
+      "messageHtml": "<p>Congratulations! Your domain <strong>mandavitestbusiness.com</strong> has been confirmed by the registry and is now active. WHOIS privacy and standard DNS zones have been allocated.</p>",
+      "isRead": false,
+      "sentAt": "2026-11-08T09:48:25.038Z"
+    },
+    {
+      "id": "NOTIF-1794131301269",
+      "recipientEmail": "client@techstart.io",
+      "recipientId": "CUST-2001",
+      "type": "PAYMENT_SUCCESS",
+      "subject": "Payment Receipt: ₹801.22 (ORD-2026-3172)",
+      "messageHtml": "<p>Payment of ₹801.22 for Domain Registration: mandavitestbusiness.com (1 Year) was successfully completed via UPI. Transaction ID: pay_NxRmw7ngbyp264i.</p>",
+      "isRead": false,
+      "sentAt": "2026-11-08T09:48:21.265Z"
+    },
+    {
+      "id": "NOTIF-1794131206995",
+      "recipientEmail": "priya.patel@techstart.in",
+      "recipientId": "CUST-1005",
+      "type": "ACCOUNT_CREATED",
+      "subject": "Welcome to Nexora Cloud Platform",
+      "messageHtml": "<p>Hello Priya Patel, your customer account (CUST-1005) has been created automatically using your Google Account. You can now register domains, deploy websites, and manage cloud services seamlessly.</p>",
+      "isRead": false,
+      "sentAt": "2026-11-08T09:46:46.995Z"
+    },
+    {
+      "id": "NOTIF-1794129367942",
+      "recipientEmail": "customer.test@gmail.com",
+      "recipientId": "CUST-1004",
+      "type": "ACCOUNT_CREATED",
+      "subject": "Welcome to Nexora Cloud Platform",
+      "messageHtml": "<p>Hello Test Customer, your customer account (CUST-1004) has been created automatically using your Google Account. You can now register domains, deploy websites, and manage cloud services seamlessly.</p>",
+      "isRead": false,
+      "sentAt": "2026-11-08T09:16:07.942Z"
+    },
+    {
+      "id": "NOTIF-1794122327895",
+      "recipientEmail": "client@techstart.io",
+      "recipientId": "CUST-2001",
+      "type": "DOMAIN_REGISTERED",
+      "subject": "Domain Registration Successful: cloudstartup2026.com",
+      "messageHtml": "<p>Congratulations! Your domain <strong>cloudstartup2026.com</strong> has been registered with Nexora Authoritative Registry Connector. Registrant is confirmed as Vikramaditya Roy.</p>",
+      "isRead": false,
+      "sentAt": "2026-11-08T07:18:47.893Z"
+    },
+    {
+      "id": "NOTIF-1794121189095",
+      "recipientEmail": "client@techstart.io",
+      "recipientId": "CUST-2001",
+      "type": "DOMAIN_REGISTERED",
+      "subject": "Domain Registration Successful: india.in",
+      "messageHtml": "<p>Congratulations! Your domain <strong>india.in</strong> has been registered with Nexora Registrar Gateway (Authoritative). Registrant is confirmed as Vikramaditya Roy.</p>",
+      "isRead": false,
+      "sentAt": "2026-11-08T06:59:49.092Z"
+    },
+    {
+      "id": "NOTIF-1794121188844",
+      "recipientEmail": "client@techstart.io",
+      "recipientId": "CUST-2001",
+      "type": "PAYMENT_SUCCESS",
+      "subject": "Payment Receipt: ₹588.82 (ORD-2026-8640)",
+      "messageHtml": "<p>Payment of ₹588.82 for Domain Registration: india.in (1 Year) was successfully verified via UPI. Transaction ID: pay_NxRmw7hfl63gtis.</p>",
+      "isRead": false,
+      "sentAt": "2026-11-08T06:59:48.843Z"
+    },
+    {
+      "id": "NOTIF-1",
+      "recipientEmail": "client@techstart.io",
+      "recipientId": "CUST-2001",
+      "type": "HOSTING_ACTIVATED",
+      "subject": "Your Nexora Cloud Hosting is Live! (techstartapp.com)",
+      "messageHtml": "<p>Dear Vikramaditya, your Business Hosting account has been successfully provisioned. You can now upload your website ZIP files directly from your Customer Dashboard.</p>",
+      "isRead": false,
+      "sentAt": "2026-02-15T10:22:00.000Z"
+    }
+  ],
+  "settings": {
+    "brandName": "Nexora Cloud",
+    "supportEmail": "support@nexoracloud.com",
+    "supportPhone": "+91 800-456-7890",
+    "currency": "INR",
+    "taxRatePercent": 18,
+    "taxName": "GST (18%)",
+    "registrarApiConfigured": false,
+    "registrarApiKeyMasked": "RC-LIVE-********9821",
+    "registrarEndpoint": "https://api.resellerclub.com/v1/domains",
+    "paymentGatewayConfigured": true,
+    "paymentGatewayKeyId": "rzp_live_nexora_784920",
+    "emailSmtpConfigured": true,
+    "defaultNameserver1": "ns1.nexoracloud.com",
+    "defaultNameserver2": "ns2.nexoracloud.com",
+    "defaultServerIp": "159.65.132.88",
+    "maintenanceMode": false,
+    "promoSpecialOfferEnabled": true
+  },
+  "tlds": [
+    {
+      "tld": ".com",
+      "registrationPrice": 849,
+      "renewalPrice": 999,
+      "transferPrice": 799,
+      "registrarCost": 650,
+      "marginPercent": 30,
+      "isSupported": true,
+      "isPopular": true
+    },
+    {
+      "tld": ".in",
+      "registrationPrice": 499,
+      "renewalPrice": 649,
+      "transferPrice": 449,
+      "registrarCost": 350,
+      "marginPercent": 42,
+      "isSupported": true,
+      "isPopular": true
+    },
+    {
+      "tld": ".net",
+      "registrationPrice": 949,
+      "renewalPrice": 1149,
+      "transferPrice": 899,
+      "registrarCost": 750,
+      "marginPercent": 26,
+      "isSupported": true,
+      "isPopular": true
+    },
+    {
+      "tld": ".org",
+      "registrationPrice": 899,
+      "renewalPrice": 1099,
+      "transferPrice": 849,
+      "registrarCost": 700,
+      "marginPercent": 28,
+      "isSupported": true,
+      "isPopular": true
+    },
+    {
+      "tld": ".co.in",
+      "registrationPrice": 399,
+      "renewalPrice": 549,
+      "transferPrice": 349,
+      "registrarCost": 280,
+      "marginPercent": 42,
+      "isSupported": true,
+      "isPopular": false
+    },
+    {
+      "tld": ".online",
+      "registrationPrice": 199,
+      "renewalPrice": 1499,
+      "transferPrice": 999,
+      "registrarCost": 120,
+      "marginPercent": 65,
+      "isSupported": true,
+      "isPopular": true
+    },
+    {
+      "tld": ".store",
+      "registrationPrice": 249,
+      "renewalPrice": 1899,
+      "transferPrice": 1299,
+      "registrarCost": 160,
+      "marginPercent": 55,
+      "isSupported": true,
+      "isPopular": true
+    },
+    {
+      "tld": ".tech",
+      "registrationPrice": 299,
+      "renewalPrice": 1999,
+      "transferPrice": 1499,
+      "registrarCost": 200,
+      "marginPercent": 49,
+      "isSupported": true,
+      "isPopular": true
+    },
+    {
+      "tld": ".site",
+      "registrationPrice": 149,
+      "renewalPrice": 1399,
+      "transferPrice": 899,
+      "registrarCost": 99,
+      "marginPercent": 50,
+      "isSupported": true,
+      "isPopular": false
+    },
+    {
+      "tld": ".xyz",
+      "registrationPrice": 199,
+      "renewalPrice": 999,
+      "transferPrice": 799,
+      "registrarCost": 110,
+      "marginPercent": 80,
+      "isSupported": true,
+      "isPopular": true
+    },
+    {
+      "tld": ".app",
+      "registrationPrice": 1199,
+      "renewalPrice": 1399,
+      "transferPrice": 1099,
+      "registrarCost": 950,
+      "marginPercent": 26,
+      "isSupported": true,
+      "isPopular": true
+    },
+    {
+      "tld": ".blog",
+      "registrationPrice": 499,
+      "renewalPrice": 1699,
+      "transferPrice": 1199,
+      "registrarCost": 380,
+      "marginPercent": 31,
+      "isSupported": true,
+      "isPopular": false
+    },
+    {
+      "tld": ".info",
+      "registrationPrice": 399,
+      "renewalPrice": 1499,
+      "transferPrice": 999,
+      "registrarCost": 290,
+      "marginPercent": 37,
+      "isSupported": true,
+      "isPopular": false
+    },
+    {
+      "tld": ".biz",
+      "registrationPrice": 499,
+      "renewalPrice": 1399,
+      "transferPrice": 999,
+      "registrarCost": 350,
+      "marginPercent": 42,
+      "isSupported": true,
+      "isPopular": false
+    },
+    {
+      "tld": ".website",
+      "registrationPrice": 249,
+      "renewalPrice": 1299,
+      "transferPrice": 899,
+      "registrarCost": 180,
+      "marginPercent": 38,
+      "isSupported": true,
+      "isPopular": false
+    }
+  ],
+  "promoDomainOffer": {
+    "id": "PROMO-DOM-1",
+    "title": "Special ₹1 Domain Registration Offer",
+    "isEnabled": true,
+    "maxOrders": 500,
+    "ordersClaimed": 43,
+    "minRegistrationPeriodYears": 1,
+    "allowPlatformSubsidy": true,
+    "eligibleTlds": [
+      ".com",
+      ".in",
+      ".net",
+      ".org",
+      ".co.in",
+      ".online",
+      ".store",
+      ".tech",
+      ".site",
+      ".xyz"
+    ],
+    "promotionalPrice": 1,
+    "customerEligibility": "all",
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "customRenewalPrices": {},
+    "termsAndConditions": ""
+  },
+  "domainPlans": [
+    {
+      "id": "plan-dom-1",
+      "tierNumber": 1,
+      "name": "Special Promotional Offer",
+      "slug": "special-promo-offer",
+      "servicePackagePrice": 1,
+      "renewalPrice": 499,
+      "category": "promotional",
+      "description": "Promotional 1st-year registration rate on select authoritative TLDs.",
+      "features": [
+        "1 Domain Registration",
+        "Free Let's Encrypt SSL",
+        "Authoritative Anycast DNS",
+        "Whois Privacy Protection included"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-2",
+      "tierNumber": 2,
+      "name": "Basic Plan",
+      "slug": "basic-plan",
+      "servicePackagePrice": 499,
+      "renewalPrice": 599,
+      "category": "standard",
+      "description": "Standard domain registration with essential DNS management.",
+      "features": [
+        "Standard Domain Registration",
+        "Standard DNS Manager",
+        "Basic Email Forwarding (2 Aliases)",
+        "Domain Theft Protection Lock"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-3",
+      "tierNumber": 3,
+      "name": "Standard Plan",
+      "slug": "standard-plan",
+      "servicePackagePrice": 699,
+      "renewalPrice": 799,
+      "category": "standard",
+      "description": "Enhanced domain package with full DNS control and privacy guard.",
+      "features": [
+        "Domain Registration & Auto-Renew",
+        "Advanced Anycast DNS Zone Editor",
+        "Full WHOIS Identity Shield",
+        "5 Email Forwarding Aliases"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-4",
+      "tierNumber": 4,
+      "name": "Premium Plan",
+      "slug": "premium-plan",
+      "servicePackagePrice": 899,
+      "renewalPrice": 999,
+      "category": "standard",
+      "description": "Complete domain management suite with premium DNS SLA.",
+      "features": [
+        "Top-Tier Domain Registration",
+        "DDoS-Protected Anycast DNS",
+        "Free Wildcard SSL Provisioning",
+        "Unlimited Subdomain Records",
+        "EPP Transfer Security Lock"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-5",
+      "tierNumber": 5,
+      "name": "Professional Plan",
+      "slug": "professional-plan",
+      "servicePackagePrice": 1500,
+      "renewalPrice": 1750,
+      "category": "business",
+      "description": "Professional domain portfolio plan with DNSSEC and accelerated TTLs.",
+      "features": [
+        "Domain Registration + DNSSEC",
+        "Ultra-Fast 60s TTL DNS Propagation",
+        "WHOIS Privacy Masking",
+        "Priority Nameserver Redundancy",
+        "24/7 Registrar Desk Hotline"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-6",
+      "tierNumber": 6,
+      "name": "Business Plan",
+      "slug": "business-plan",
+      "servicePackagePrice": 2499,
+      "renewalPrice": 2799,
+      "category": "business",
+      "description": "High-availability business domain management for corporate portals.",
+      "features": [
+        "Multi-Region Anycast DNS Nodes",
+        "Automated Health Monitoring & Failover",
+        "Custom Vanity Nameservers (ns1/ns2.yourdomain)",
+        "Compliance WHOIS Auditing",
+        "Priority Registry Support"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-7",
+      "tierNumber": 7,
+      "name": "Advanced Business Plan",
+      "slug": "advanced-business-plan",
+      "servicePackagePrice": 4999,
+      "renewalPrice": 5499,
+      "category": "business",
+      "description": "Robust corporate domain protection with trademark watchlist alert.",
+      "features": [
+        "Enterprise Global DNS Network",
+        "Brand Trademark Collision Scanner",
+        "Dedicated Vanity Nameserver Cluster",
+        "2-Hour DNS Assistance SLA",
+        "Multi-User Domain Access Roles"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-8",
+      "tierNumber": 8,
+      "name": "Premium Business Plan",
+      "slug": "premium-business-plan",
+      "servicePackagePrice": 7999,
+      "renewalPrice": 8999,
+      "category": "business",
+      "description": "Advanced portfolio shielding and domain governance suite.",
+      "features": [
+        "Registry Lock Security Protection",
+        "Automated Geo-DNS Traffic Steering",
+        "Corporate Domain Registry Audit Trail",
+        "Dedicated Technical Account Manager",
+        "Custom Reverse DNS (PTR) Records"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-9",
+      "tierNumber": 9,
+      "name": "Enterprise Plan",
+      "slug": "enterprise-plan",
+      "servicePackagePrice": 9999,
+      "renewalPrice": 11499,
+      "category": "enterprise",
+      "description": "Mission-critical enterprise domain infrastructure with zero downtime guarantee.",
+      "features": [
+        "High-Assurance Anycast DNS Infrastructure",
+        "Registry-Level Lock Enforcement",
+        "Comprehensive Trademark Infringement Guard",
+        "Custom API Access for Bulk Operations",
+        "15-Minute Critical Incident SLA"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-10",
+      "tierNumber": 10,
+      "name": "Enterprise Plus",
+      "slug": "enterprise-plus",
+      "servicePackagePrice": 14999,
+      "renewalPrice": 16999,
+      "category": "enterprise",
+      "description": "Enterprise security suite with threat intelligence and proactive defense.",
+      "features": [
+        "Real-Time Domain Phishing & Typosquatting Shield",
+        "Automated DNSSEC Key Rollover",
+        "Custom Edge Routing & Latency Optimizer",
+        "Executive Concierge Registrar Engineering",
+        "Unlimited DNS Zones & Subdomains"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-11",
+      "tierNumber": 11,
+      "name": "Ultimate Enterprise",
+      "slug": "ultimate-enterprise",
+      "servicePackagePrice": 24999,
+      "renewalPrice": 27999,
+      "category": "enterprise",
+      "description": "Flagship enterprise domain solution for global corporations and financial institutions.",
+      "features": [
+        "Global 100% DNS Uptime SLA with Financial Backing",
+        "Dedicated Anycast IP Blocks & Custom BGP Routing",
+        "White-Glove Legal & Registry Dispute Concierge",
+        "Executive Security Audit & Hardening Reports",
+        "Direct Registry Engineer Hotline"
+      ],
+      "isActive": true
+    },
+    {
+      "id": "plan-dom-12",
+      "tierNumber": 12,
+      "name": "Custom Enterprise Plan",
+      "slug": "custom-enterprise",
+      "servicePackagePrice": 39999,
+      "renewalPrice": 44999,
+      "category": "enterprise",
+      "description": "Tailored enterprise domain architecture designed to custom organizational specifications.",
+      "features": [
+        "Bespoke Anycast DNS Architecture",
+        "Custom TLD Whitelisting & Policy Enforcement",
+        "Multi-Cloud Automated Failover & Disaster Recovery",
+        "Dedicated Account Executive & Legal Liaison",
+        "Custom Invoicing & Multi-Entity Billing"
+      ],
+      "isActive": true
+    }
+  ],
+  "coupons": [
+    {
+      "id": "COUP-2026-SAVE30NOV",
+      "code": "SAVE30NOV",
+      "discountPercent": 30,
+      "discountType": "percentage",
+      "title": "30% OFF NOV Annual Cloud Infrastructure",
+      "description": "Authentic 30% savings on all eligible registrations for NOV 2026.",
+      "minOrderValue": 1500,
+      "maxDiscountAmount": 5000,
+      "startDate": "2026-11-01",
+      "expiryDate": "2026-11-30",
+      "isActive": true,
+      "isExpired": false,
+      "eligibleServices": [
+        "all"
+      ],
+      "allowCombineWithPromo1Rupee": false,
+      "usageCount": 0,
+      "usageLimitPerCustomer": 1,
+      "redeemedBy": [],
+      "createdAt": "2026-11-08T09:15:04.817Z"
+    },
+    {
+      "id": "COUP-2026-SAVE20NOV",
+      "code": "SAVE20NOV",
+      "discountPercent": 20,
+      "discountType": "percentage",
+      "title": "20% OFF NOV Cloud Hosting & Domains",
+      "description": "Authentic 20% savings on all eligible registrations for NOV 2026.",
+      "minOrderValue": 499,
+      "maxDiscountAmount": 2500,
+      "startDate": "2026-11-01",
+      "expiryDate": "2026-11-30",
+      "isActive": true,
+      "isExpired": false,
+      "eligibleServices": [
+        "all"
+      ],
+      "allowCombineWithPromo1Rupee": false,
+      "usageCount": 0,
+      "usageLimitPerCustomer": 1,
+      "redeemedBy": [],
+      "createdAt": "2026-11-08T09:15:04.817Z"
+    },
+    {
+      "id": "COUP-2026-NOV20",
+      "code": "DOMAIN20NOV",
+      "discountPercent": 20,
+      "discountType": "percentage",
+      "title": "20% OFF November Domain Special",
+      "description": "Get an authentic 20% discount on all eligible domain registrations and service plans.",
+      "minOrderValue": 499,
+      "maxDiscountAmount": 2000,
+      "startDate": "2026-11-01",
+      "expiryDate": "2026-11-30",
+      "isActive": true,
+      "isExpired": false,
+      "eligibleServices": [
+        "domain",
+        "all"
+      ],
+      "allowCombineWithPromo1Rupee": false,
+      "usageCount": 14,
+      "usageLimitPerCustomer": 1,
+      "redeemedBy": [],
+      "createdAt": "2026-11-01T00:00:00.000Z"
+    },
+    {
+      "id": "COUP-2026-NOV30",
+      "code": "DOMAIN30NOV",
+      "discountPercent": 30,
+      "discountType": "percentage",
+      "title": "30% OFF November Business Domain Deal",
+      "description": "Save 30% on multi-year domain registrations and business service tiers.",
+      "minOrderValue": 899,
+      "maxDiscountAmount": 3500,
+      "startDate": "2026-11-01",
+      "expiryDate": "2026-11-30",
+      "isActive": true,
+      "isExpired": false,
+      "eligibleServices": [
+        "domain",
+        "all"
+      ],
+      "allowCombineWithPromo1Rupee": false,
+      "usageCount": 8,
+      "usageLimitPerCustomer": 1,
+      "redeemedBy": [],
+      "createdAt": "2026-11-01T00:00:00.000Z"
+    },
+    {
+      "id": "COUP-2026-SAVE20",
+      "code": "SAVE20MONTH",
+      "discountPercent": 20,
+      "discountType": "percentage",
+      "title": "20% OFF Cloud Hosting & Domains",
+      "description": "Monthly customer appreciation voucher: 20% savings across domains and hosting packages.",
+      "minOrderValue": 499,
+      "maxDiscountAmount": 2500,
+      "startDate": "2026-11-01",
+      "expiryDate": "2026-11-30",
+      "isActive": true,
+      "isExpired": false,
+      "eligibleServices": [
+        "all"
+      ],
+      "allowCombineWithPromo1Rupee": false,
+      "usageCount": 22,
+      "usageLimitPerCustomer": 1,
+      "redeemedBy": [],
+      "createdAt": "2026-11-01T00:00:00.000Z"
+    },
+    {
+      "id": "COUP-2026-SAVE30",
+      "code": "SAVE30MONTH",
+      "discountPercent": 30,
+      "discountType": "percentage",
+      "title": "30% OFF Annual Cloud Infrastructure",
+      "description": "30% discount on higher annual plans and multi-domain bundles.",
+      "minOrderValue": 1500,
+      "maxDiscountAmount": 5000,
+      "startDate": "2026-11-01",
+      "expiryDate": "2026-11-30",
+      "isActive": true,
+      "isExpired": false,
+      "eligibleServices": [
+        "all"
+      ],
+      "allowCombineWithPromo1Rupee": false,
+      "usageCount": 11,
+      "usageLimitPerCustomer": 1,
+      "redeemedBy": [],
+      "createdAt": "2026-11-01T00:00:00.000Z"
+    },
+    {
+      "id": "COUP-2026-OCT20-EXP",
+      "code": "DOMAIN20OCT",
+      "discountPercent": 20,
+      "discountType": "percentage",
+      "title": "20% OFF October Domain Sprint (Expired)",
+      "description": "Previous month promotional coupon archive.",
+      "minOrderValue": 499,
+      "startDate": "2026-10-01",
+      "expiryDate": "2026-10-31",
+      "isActive": false,
+      "isExpired": true,
+      "eligibleServices": [
+        "domain",
+        "all"
+      ],
+      "allowCombineWithPromo1Rupee": false,
+      "usageCount": 45,
+      "usageLimitPerCustomer": 1,
+      "redeemedBy": [],
+      "createdAt": "2026-10-01T00:00:00.000Z"
+    }
+  ],
+  "backups": [
+    {
+      "id": "BAK-1001",
+      "hostingId": "HOST-4001",
+      "customerId": "CUST-2001",
+      "domainName": "techstartapp.com",
+      "fileName": "techstartapp_full_backup_20261101.tar.gz",
+      "sizeMB": 18.4,
+      "createdAt": "2026-11-01T02:00:00.000Z",
+      "status": "completed",
+      "type": "automated_daily",
+      "downloadUrl": "/api/hosting/HOST-4001/backups/BAK-1001/download"
+    },
+    {
+      "id": "BAK-1002",
+      "hostingId": "HOST-4001",
+      "customerId": "CUST-2001",
+      "domainName": "techstartapp.com",
+      "fileName": "techstartapp_manual_snapshot_20261107.tar.gz",
+      "sizeMB": 21.2,
+      "createdAt": "2026-11-07T14:30:00.000Z",
+      "status": "completed",
+      "type": "manual_snapshot",
+      "downloadUrl": "/api/hosting/HOST-4001/backups/BAK-1002/download"
+    }
+  ],
+  "paymentSettings": {
+    "activeQrCode": {
+      "id": "QR-ADMIN-101",
+      "name": "Official Nexora Cloud Merchant Primary QR",
+      "imageUrl": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20400%22%20width%3D%22400%22%20height%3D%22400%22%3E%0A%20%20%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23ffffff%22%20rx%3D%2224%22%2F%3E%0A%20%20%3C!--%20Top%20Left%20Finder%20--%3E%0A%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%2286%22%20height%3D%2286%22%20fill%3D%22%230f172a%22%20rx%3D%2214%22%2F%3E%0A%20%20%3Crect%20x%3D%2246%22%20y%3D%2246%22%20width%3D%2258%22%20height%3D%2258%22%20fill%3D%22%23ffffff%22%20rx%3D%228%22%2F%3E%0A%20%20%3Crect%20x%3D%2258%22%20y%3D%2258%22%20width%3D%2234%22%20height%3D%2234%22%20fill%3D%22%230f172a%22%20rx%3D%225%22%2F%3E%0A%20%20%3C!--%20Top%20Right%20Finder%20--%3E%0A%20%20%3Crect%20x%3D%22282%22%20y%3D%2232%22%20width%3D%2286%22%20height%3D%2286%22%20fill%3D%22%230f172a%22%20rx%3D%2214%22%2F%3E%0A%20%20%3Crect%20x%3D%22296%22%20y%3D%2246%22%20width%3D%2258%22%20height%3D%2258%22%20fill%3D%22%23ffffff%22%20rx%3D%228%22%2F%3E%0A%20%20%3Crect%20x%3D%22308%22%20y%3D%2258%22%20width%3D%2234%22%20height%3D%2234%22%20fill%3D%22%230f172a%22%20rx%3D%225%22%2F%3E%0A%20%20%3C!--%20Bottom%20Left%20Finder%20--%3E%0A%20%20%3Crect%20x%3D%2232%22%20y%3D%22282%22%20width%3D%2286%22%20height%3D%2286%22%20fill%3D%22%230f172a%22%20rx%3D%2214%22%2F%3E%0A%20%20%3Crect%20x%3D%2246%22%20y%3D%22296%22%20width%3D%2258%22%20height%3D%2258%22%20fill%3D%22%23ffffff%22%20rx%3D%228%22%2F%3E%0A%20%20%3Crect%20x%3D%2258%22%20y%3D%22308%22%20width%3D%2234%22%20height%3D%2234%22%20fill%3D%22%230f172a%22%20rx%3D%225%22%2F%3E%0A%20%20%3C!--%20Timing%20modules%20--%3E%0A%20%20%3Crect%20x%3D%22132%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%22162%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%22192%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%22222%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%22252%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22132%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22162%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22192%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22222%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22252%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%0A%20%20%3C!--%20High-Density%20QR%20Data%20Grid%20Blocks%20--%3E%0A%20%20%3Crect%20x%3D%22132%22%20y%3D%22100%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22170%22%20y%3D%22100%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22100%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22248%22%20y%3D%22100%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22100%22%20y%3D%22140%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22274%22%20y%3D%22140%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22312%22%20y%3D%22140%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22344%22%20y%3D%22140%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22100%22%20y%3D%22180%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22274%22%20y%3D%22180%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22312%22%20y%3D%22180%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22100%22%20y%3D%22220%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22274%22%20y%3D%22220%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22312%22%20y%3D%22220%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22344%22%20y%3D%22220%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22132%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22170%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22290%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22330%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22132%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22180%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22230%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22280%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22330%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22140%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22190%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22240%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22290%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22340%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3C!--%20Center%20Official%20Merchant%20Branding%20Hub%20--%3E%0A%20%20%3Crect%20x%3D%22140%22%20y%3D%22140%22%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23ffffff%22%20rx%3D%2220%22%20stroke%3D%22%230f172a%22%20stroke-width%3D%224%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%22186%22%20r%3D%2230%22%20fill%3D%22%232563eb%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M188%20186%20C188%20180%20193%20176%20199%20176%20C204%20176%20208%20179%20210%20182%20C212%20181%20214%20181%20216%20182%20C219%20184%20221%20188%20221%20191%20C221%20195%20218%20198%20214%20198%20L188%20198%20Z%22%20fill%3D%22%23ffffff%22%2F%3E%0A%20%20%3Ctext%20x%3D%22200%22%20y%3D%22238%22%20font-family%3D%22system-ui%2C%20-apple-system%2C%20sans-serif%22%20font-size%3D%2211%22%20font-weight%3D%22900%22%20text-anchor%3D%22middle%22%20fill%3D%22%230f172a%22%20letter-spacing%3D%220.5%22%3ENEXORA%20PAY%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+      "isActive": true,
+      "uploadedAt": "2026-11-01T00:00:00.000Z",
+      "updatedAt": "2026-11-08T00:00:00.000Z"
+    },
+    "qrCodeList": [
+      {
+        "id": "QR-1794131323528",
+        "name": "HDFC Bank Official Merchant QR",
+        "imageUrl": "data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\"><rect width=\"200\" height=\"200\" fill=\"#1e3a8a\"/><text x=\"100\" y=\"100\" fill=\"white\" font-size=\"14\" text-anchor=\"middle\">HDFC Merchant QR</text></svg>",
+        "isActive": false,
+        "uploadedAt": "2026-11-08T09:48:43.528Z",
+        "updatedAt": "2026-11-08T09:48:43.528Z"
+      },
+      {
+        "id": "QR-ADMIN-101",
+        "name": "Official Nexora Cloud Merchant Primary QR",
+        "imageUrl": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20400%22%20width%3D%22400%22%20height%3D%22400%22%3E%0A%20%20%3Crect%20width%3D%22400%22%20height%3D%22400%22%20fill%3D%22%23ffffff%22%20rx%3D%2224%22%2F%3E%0A%20%20%3C!--%20Top%20Left%20Finder%20--%3E%0A%20%20%3Crect%20x%3D%2232%22%20y%3D%2232%22%20width%3D%2286%22%20height%3D%2286%22%20fill%3D%22%230f172a%22%20rx%3D%2214%22%2F%3E%0A%20%20%3Crect%20x%3D%2246%22%20y%3D%2246%22%20width%3D%2258%22%20height%3D%2258%22%20fill%3D%22%23ffffff%22%20rx%3D%228%22%2F%3E%0A%20%20%3Crect%20x%3D%2258%22%20y%3D%2258%22%20width%3D%2234%22%20height%3D%2234%22%20fill%3D%22%230f172a%22%20rx%3D%225%22%2F%3E%0A%20%20%3C!--%20Top%20Right%20Finder%20--%3E%0A%20%20%3Crect%20x%3D%22282%22%20y%3D%2232%22%20width%3D%2286%22%20height%3D%2286%22%20fill%3D%22%230f172a%22%20rx%3D%2214%22%2F%3E%0A%20%20%3Crect%20x%3D%22296%22%20y%3D%2246%22%20width%3D%2258%22%20height%3D%2258%22%20fill%3D%22%23ffffff%22%20rx%3D%228%22%2F%3E%0A%20%20%3Crect%20x%3D%22308%22%20y%3D%2258%22%20width%3D%2234%22%20height%3D%2234%22%20fill%3D%22%230f172a%22%20rx%3D%225%22%2F%3E%0A%20%20%3C!--%20Bottom%20Left%20Finder%20--%3E%0A%20%20%3Crect%20x%3D%2232%22%20y%3D%22282%22%20width%3D%2286%22%20height%3D%2286%22%20fill%3D%22%230f172a%22%20rx%3D%2214%22%2F%3E%0A%20%20%3Crect%20x%3D%2246%22%20y%3D%22296%22%20width%3D%2258%22%20height%3D%2258%22%20fill%3D%22%23ffffff%22%20rx%3D%228%22%2F%3E%0A%20%20%3Crect%20x%3D%2258%22%20y%3D%22308%22%20width%3D%2234%22%20height%3D%2234%22%20fill%3D%22%230f172a%22%20rx%3D%225%22%2F%3E%0A%20%20%3C!--%20Timing%20modules%20--%3E%0A%20%20%3Crect%20x%3D%22132%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%22162%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%22192%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%22222%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%22252%22%20y%3D%2265%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22132%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22162%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22192%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22222%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%20%20%3Crect%20x%3D%2265%22%20y%3D%22252%22%20width%3D%2218%22%20height%3D%2218%22%20fill%3D%22%230f172a%22%20rx%3D%223%22%2F%3E%0A%0A%20%20%3C!--%20High-Density%20QR%20Data%20Grid%20Blocks%20--%3E%0A%20%20%3Crect%20x%3D%22132%22%20y%3D%22100%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22170%22%20y%3D%22100%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22100%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22248%22%20y%3D%22100%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22100%22%20y%3D%22140%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22274%22%20y%3D%22140%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22312%22%20y%3D%22140%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22344%22%20y%3D%22140%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22100%22%20y%3D%22180%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22274%22%20y%3D%22180%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22312%22%20y%3D%22180%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22100%22%20y%3D%22220%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22274%22%20y%3D%22220%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22312%22%20y%3D%22220%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22344%22%20y%3D%22220%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22132%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22170%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22210%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22250%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22290%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22330%22%20y%3D%22260%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22132%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22180%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22230%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22280%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22330%22%20y%3D%22300%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3Crect%20x%3D%22140%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22190%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22240%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22290%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%20%20%3Crect%20x%3D%22340%22%20y%3D%22340%22%20width%3D%2226%22%20height%3D%2226%22%20fill%3D%22%230f172a%22%20rx%3D%224%22%2F%3E%0A%0A%20%20%3C!--%20Center%20Official%20Merchant%20Branding%20Hub%20--%3E%0A%20%20%3Crect%20x%3D%22140%22%20y%3D%22140%22%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23ffffff%22%20rx%3D%2220%22%20stroke%3D%22%230f172a%22%20stroke-width%3D%224%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%22200%22%20cy%3D%22186%22%20r%3D%2230%22%20fill%3D%22%232563eb%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M188%20186%20C188%20180%20193%20176%20199%20176%20C204%20176%20208%20179%20210%20182%20C212%20181%20214%20181%20216%20182%20C219%20184%20221%20188%20221%20191%20C221%20195%20218%20198%20214%20198%20L188%20198%20Z%22%20fill%3D%22%23ffffff%22%2F%3E%0A%20%20%3Ctext%20x%3D%22200%22%20y%3D%22238%22%20font-family%3D%22system-ui%2C%20-apple-system%2C%20sans-serif%22%20font-size%3D%2211%22%20font-weight%3D%22900%22%20text-anchor%3D%22middle%22%20fill%3D%22%230f172a%22%20letter-spacing%3D%220.5%22%3ENEXORA%20PAY%3C%2Ftext%3E%0A%3C%2Fsvg%3E",
+        "isActive": true,
+        "uploadedAt": "2026-11-01T00:00:00.000Z",
+        "updatedAt": "2026-11-08T00:00:00.000Z"
+      }
+    ],
+    "enabledMethods": {
+      "upi": true,
+      "upi_qr": true,
+      "debit_card": true,
+      "credit_card": true,
+      "netbanking": true
+    },
+    "merchantName": "Nexora Cloud Technologies Pvt Ltd"
+  },
+  "domainRegistrantDetails": [
+    {
+      "orderId": "ORD-2026-3172",
+      "domainName": "mandavitestbusiness.com",
+      "firstName": "Vikramaditya",
+      "lastName": "Roy",
+      "company": "",
+      "email": "client@techstart.io",
+      "mobile": "+91 9876543210",
+      "address": "MG Road",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "postalCode": "560001",
+      "country": "India",
+      "organization": "",
+      "submittedAt": "2026-11-08T09:47:49.380Z"
+    }
+  ],
+  "paymentAttempts": [
+    {
+      "id": "ATT-1794131301266",
+      "orderId": "ORD-2026-3172",
+      "customerId": "CUST-2001",
+      "amount": 801.22,
+      "method": "UPI",
+      "gateway": "Razorpay",
+      "status": "successful",
+      "ipAddress": "127.0.0.1",
+      "userAgent": "curl/7.88.1",
+      "createdAt": "2026-11-08T09:48:21.265Z"
+    }
+  ],
+  "paymentWebhooks": [],
+  "refundRecords": []
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Nexora Cloud - Web Hosting & Domain Registration Platform",
+  "description": "Enterprise cloud web hosting, live domain registration, automated DNS & SSL, and instant website ZIP deployment platform with comprehensive customer and administration control.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1257 @@
+COMPLETE MASTER PROMPT
+
+PROFESSIONAL WEB HOSTING AND DOMAIN REGISTRATION BUSINESS PLATFORM
+
+PROJECT INSTRUCTION
+
+Build a complete, professional, production-oriented Web Hosting and Domain Registration Platform inspired by the functionality of Hostinger, but with its own unique branding, original interface and independent design.
+
+This must be a real hosting and domain business platform, not just a frontend template or static demonstration website.
+
+The entire system must include:
+
+- Professional Public Website
+- Customer Registration and Login
+- Customer Dashboard
+- Domain Search and Registration
+- Domain Management
+- Hosting Plans and Purchases
+- Hosting Provisioning
+- Website ZIP Upload and Deployment
+- File Manager
+- DNS Management
+- SSL Management
+- Multi-Payment Gateway
+- Complete Admin Panel
+- Customer Management
+- Order Management
+- Payment Management
+- Renewal Management
+- Automated Notifications
+- Support Ticket System
+- Security and Audit Logs
+- Real Backend
+- Real Database
+- Real API Integrations
+
+Do not remove, simplify or ignore any requirement in this prompt.
+
+Do not create an AI Website Builder, AI Website Generator or prompt-based website creation feature.
+
+Customers already have their own websites. They should be able to upload their existing website files and publish them using the hosting service.
+
+---
+
+PART 1: WEBSITE DESIGN AND PUBLIC PAGES
+
+1. Professional Website Design
+
+Create a premium, modern and trustworthy hosting-company website.
+
+Design requirements:
+
+- Modern professional UI
+- Unique brand identity
+- Clean typography
+- Attractive colors
+- Professional icons
+- Smooth animations
+- Responsive layouts
+- Mobile-first design
+- Tablet support
+- Desktop support
+- Fast loading
+- Easy navigation
+- Clear pricing cards
+- Professional footer
+- Accessible interface
+
+Do not copy Hostinger's logo, copyrighted graphics or exact website design.
+
+Create an original brand identity.
+
+2. Required Website Pages
+
+Create the following pages:
+
+1. Home
+2. Web Hosting
+3. Shared Hosting
+4. Business Hosting
+5. Professional Hosting
+6. Enterprise Hosting
+7. Domain Search
+8. Domain Registration
+9. Domain Transfer
+10. Domain Pricing
+11. Hosting Pricing
+12. About Us
+13. Contact Us
+14. FAQ
+15. Help Center
+16. Login
+17. Register
+18. Forgot Password
+19. Customer Dashboard
+20. Hosting Management
+21. Domain Management
+22. Website Deployment
+23. File Manager
+24. DNS Management
+25. SSL Management
+26. Billing and Invoices
+27. Support Tickets
+28. Terms and Conditions
+29. Privacy Policy
+30. Refund Policy
+
+Every page must be connected to the appropriate backend functionality.
+
+---
+
+PART 2: HOSTING PLANS AND PRICING
+
+Create the following hosting plans.
+
+Plan| Price| Validity
+Special Offer| ₹1| 1 Year
+Basic Hosting| ₹499| 1 Year
+Standard Hosting| ₹699| 1 Year
+Premium Hosting| ₹799| 1 Year
+Business Hosting| ₹899| 1 Year
+Professional Hosting| ₹1,000| 1 Year
+Advanced Hosting| ₹5,000| 1 Year
+Enterprise Hosting| ₹10,000| 1 Year
+Enterprise Plus| ₹15,000| 1 Year
+Pro Business| ₹30,000| 1 Year
+Ultimate Enterprise| ₹40,000| 1 Year
+
+Important:
+
+- Do not add a ₹49 plan.
+- Keep the ₹1 yearly promotional plan.
+- The ₹1 plan may have limited availability and usage restrictions.
+- Admin can enable or disable promotional plans.
+- Admin can change prices, discounts, validity, renewal prices and resource limits.
+- Never advertise resources that the actual hosting infrastructure cannot provide.
+- Show renewal prices clearly before purchase.
+- Show taxes and final payable amounts clearly.
+
+All plan cards must have working purchase buttons.
+
+---
+
+PART 3: CUSTOMER ACCOUNT SYSTEM
+
+Build a secure customer account system.
+
+Features:
+
+- Customer Registration
+- Login
+- Logout
+- Email Verification where required
+- Password Reset
+- Secure Sessions
+- Customer Profile
+- Customer Dashboard
+- Account Settings
+- Order History
+- Payment History
+- Hosting Services
+- Domain Services
+- Renewal History
+- Invoices
+- Support Tickets
+- Notifications
+
+Each customer must have a unique Customer ID.
+
+A customer must only be able to access their own information and services.
+
+---
+
+PART 4: DOMAIN SEARCH AND REGISTRATION
+
+1. Domain Search Box
+
+Create a professional domain search box on the homepage and a separate domain search page.
+
+Customer can enter:
+
+- Company Name
+- Brand Name
+- Website Name
+- Any Desired Domain Name
+
+After entering the name, show available domain extensions.
+
+Support extensions where the selected Registrar provides them, including:
+
+.com, .in, .net, .org, .co.in, .info, .biz, .online, .store, .website, .xyz, .tech, .site, .app, .blog, and other supported TLDs.
+
+Country-code domains such as .uk, .us, .ca, .au, .de and .jp should only be offered when supported and eligibility requirements are satisfied.
+
+2. Real-Time Availability
+
+Use a real Domain Registrar API.
+
+Show:
+
+- Available
+- Unavailable
+- Premium Domain
+- Registration Price
+- Renewal Price
+- Transfer Price, where supported
+- Registration Period
+
+Never show fake domain availability.
+
+If a domain is unavailable, show alternative domain suggestions.
+
+3. Domain Purchase
+
+When the customer clicks an available domain:
+
+Step 1: Select Domain.
+
+Step 2: Select Registration Period.
+
+Step 3: Enter Customer and Registrant Details.
+
+Required fields should be determined by the Registrar and the domain extension.
+
+Possible fields:
+
+- First Name
+- Last Name
+- Company Name (Optional)
+- Email
+- Mobile
+- Country
+- State
+- City
+- Address
+- Postal Code
+- Registrant Contact
+
+Administrative and Technical Contacts should be collected only where required.
+
+Step 4: Show Order Summary.
+
+Step 5: Proceed to Payment.
+
+Step 6: Verify Payment on the Backend.
+
+Step 7: Automatically submit the registration request to the Registrar API.
+
+Step 8: Wait for actual Registrar confirmation.
+
+Step 9: Display the confirmed Domain Status in the Customer Dashboard.
+
+4. Domain Activation
+
+Domain should only show Active after successful confirmation from the Registrar.
+
+If payment succeeds but registration fails:
+
+- Do not show the domain as Active.
+- Show Pending or Failed status.
+- Notify the customer.
+- Notify Admin.
+- Prevent duplicate registration.
+- Allow safe retry.
+- Provide a refund process if registration cannot be completed.
+
+Store:
+
+- Domain Name
+- Customer ID
+- Registrar ID
+- Registration Date
+- Expiry Date
+- Renewal Date
+- Registrar Transaction ID
+- Domain Status
+
+---
+
+PART 5: DOMAIN OWNERSHIP, TRANSFER AND MANAGEMENT
+
+Customers must be able to manage their purchased domains.
+
+Features:
+
+- Domain Details
+- Domain Status
+- Expiry Date
+- Renewal
+- Auto-Renewal
+- Nameserver Settings
+- DNS Records
+- Domain Lock
+- Domain Transfer
+- EPP/Auth Code Request
+- Domain Privacy, where supported
+- Domain Connection to Hosting
+
+Important Ownership Rules:
+
+The customer must be the Registrant of the domain using the customer's own submitted details.
+
+The platform Admin can manage the service through authorized Registrar APIs and account permissions.
+
+Do not transfer domain ownership to the platform owner without the customer's explicit authorization.
+
+The customer must retain applicable domain ownership and transfer rights.
+
+Domain transfer to another Registrar is not necessarily instant. Follow the actual Registrar and Registry rules, including authorization codes and transfer eligibility.
+
+Do not falsely promise instant transfer.
+
+---
+
+PART 6: HOSTING PURCHASE AND PROVISIONING
+
+Create a real Hosting Purchase System.
+
+Customer selects a plan, places an order and pays.
+
+After verified payment:
+
+1. Backend verifies the transaction.
+2. Backend contacts the Hosting Provider API.
+3. Hosting Account is provisioned.
+4. Hosting Details are saved in the Database.
+5. Customer Dashboard is updated.
+6. Admin Dashboard is updated.
+7. Confirmation notification is sent.
+
+Hosting must be provisioned on real infrastructure.
+
+Do not create fake Hosting Accounts.
+
+Use supported hosting infrastructure such as:
+
+- Cloud Hosting
+- VPS
+- Shared Hosting Provider
+- Reseller Hosting
+- Supported Hosting Control APIs
+
+The system must support only the runtimes and features actually provided by the selected infrastructure.
+
+---
+
+PART 7: WEBSITE ZIP UPLOAD AND DEPLOYMENT
+
+This is one of the most important features.
+
+Customers already have their website files. They must be able to upload their website directly.
+
+Create a professional Website Deployment page.
+
+Upload Features
+
+- Upload ZIP File
+- Show Upload Progress
+- Show File Size
+- Validate ZIP File
+- Upload Status
+- Extract ZIP
+- Select Website Root Directory
+- Configure Website Document Root
+- Deploy Website
+- Show Deployment Progress
+- Show Deployment Result
+
+Supported Website Types
+
+Support static HTML, CSS and JavaScript websites on compatible hosting.
+
+Support PHP, MySQL, WordPress, Node.js and Python only where the actual Hosting Provider supports them.
+
+Do not advertise unsupported technologies.
+
+Safe ZIP Extraction
+
+Implement:
+
+- File Type Validation
+- File Size Limits
+- ZIP Bomb Protection
+- Path Traversal Protection
+- Malware Scanning where available
+- Safe Extraction
+- Storage Quotas
+- Permission Controls
+- Deployment Logs
+
+Never extract files outside the customer's assigned hosting directory.
+
+Website Deployment
+
+After extraction:
+
+1. Validate Website Files.
+2. Identify the Website Root Directory.
+3. Configure the Document Root.
+4. Check Hosting Compatibility.
+5. Deploy Files.
+6. Connect the Domain.
+7. Configure SSL.
+8. Run Website Health Check.
+9. Show Website Status.
+
+The Customer Dashboard should show:
+
+- Website Live
+- Deployment Pending
+- Deployment Failed
+- DNS Pending
+- SSL Pending
+- Website Error
+
+Do not show Website Live unless the website is actually accessible and verified.
+
+---
+
+PART 8: CUSTOMER FILE MANAGER
+
+Create a File Manager inside the Customer Dashboard.
+
+Features:
+
+- Upload Files
+- Upload Folders where supported
+- Create Folder
+- Rename
+- Delete
+- Download
+- Move Files
+- Copy Files
+- View File Details
+- Storage Usage
+- Search Files
+
+Customers should not need to visit cPanel for routine file operations.
+
+The platform may use hosting provider APIs or internal server management systems behind the scenes.
+
+Enforce customer directory isolation and permissions.
+
+---
+
+PART 9: DNS MANAGEMENT
+
+Customers should be able to manage supported DNS records.
+
+Record Types:
+
+- A
+- AAAA
+- CNAME
+- MX
+- TXT
+- SRV
+- CAA
+
+Features:
+
+- Add Record
+- Edit Record
+- Delete Record
+- Nameserver Management
+- DNS Status
+- DNS Verification
+- DNS Propagation Information
+
+For domains registered elsewhere, provide instructions for connecting the domain using the required DNS records or nameservers.
+
+Do not change DNS at another Registrar without the customer's authorization and an appropriate integration.
+
+---
+
+PART 10: SSL MANAGEMENT
+
+Create an SSL Management System.
+
+Features:
+
+- SSL Status
+- Automatic SSL Provisioning
+- SSL Installation
+- Renewal Monitoring
+- Expiry Notifications
+- SSL Error Reporting
+- HTTPS Verification
+
+Use supported certificate providers such as Let's Encrypt or the hosting provider's SSL integration.
+
+Only show SSL Active after the certificate is actually issued and installed.
+
+---
+
+PART 11: AUTOMATIC RENEWAL AND NOTIFICATIONS
+
+Create an automatic renewal system.
+
+Track Hosting and Domain expiry separately.
+
+Send reminders:
+
+- 30 Days Before
+- 15 Days Before
+- 7 Days Before
+- 1 Day Before
+- On Expiry
+
+Auto-Renewal must require explicit customer consent and a supported payment authorization method.
+
+Features:
+
+- Renewal Orders
+- Renewal Payment
+- Renewal Confirmation
+- Renewal Failure Notification
+- Grace Period Status
+- Expiry Status
+- Service Suspension Rules
+
+Follow the actual domain extension and hosting provider policies.
+
+---
+
+PART 12: MULTI-PAYMENT GATEWAY
+
+Create a professional Payment Page.
+
+The customer should be able to pay using any payment method enabled by the configured Gateway.
+
+Supported Payment Options
+
+UPI
+
+- UPI ID
+- QR Code
+- Supported UPI Apps
+- Gateway-Supported UPI Intent
+
+Cards
+
+- Debit Card
+- Credit Card
+- Supported Domestic Cards
+- International Cards where supported
+
+Other Methods
+
+- Net Banking
+- Supported Wallets
+- Other available Gateway Methods
+
+Use a real payment provider such as Razorpay or another suitable provider.
+
+Payment Workflow
+
+1. Customer selects a service.
+2. Backend creates an order.
+3. Backend creates a Payment Gateway Order.
+4. Customer opens secure checkout.
+5. Customer chooses a payment method.
+6. Payment Gateway processes the payment.
+7. Backend verifies the Gateway Webhook Signature.
+8. Backend verifies amount, order and transaction.
+9. Payment becomes successful only after authoritative confirmation.
+10. Service activation begins.
+
+Payment Security
+
+- Never store CVV.
+- Never store UPI PIN.
+- Never store OTP.
+- Never expose API Secret Keys in frontend code.
+- Never trust frontend payment success messages.
+- Verify payment on the backend.
+- Prevent duplicate transactions.
+- Use idempotency.
+- Maintain transaction logs.
+- Support real refund processing through the Gateway.
+
+Do not create fake payment success screens.
+
+Important: Payment Gateway account activation, business verification or other requirements must follow the selected provider's actual policies. Do not ask customers for unnecessary KYC documents during ordinary purchases. Collect additional information only where legally or technically required.
+
+---
+
+PART 13: COMPLETE ADMIN PANEL
+
+Create a powerful and professional Admin Panel.
+
+The Admin Panel must be separate from the Customer Dashboard.
+
+Only authorized Admin Accounts can access it.
+
+1. Secure Admin Login
+
+Features:
+
+- Admin Email
+- Password
+- Two-Factor Authentication
+- Forgot Password
+- Secure Sessions
+- Login History
+- Unauthorized Login Protection
+- Suspicious Activity Alerts
+
+2. Admin Dashboard
+
+Show real-time information:
+
+- Total Customers
+- Active Customers
+- Total Domains
+- Active Domains
+- Total Hosting Accounts
+- Active Hosting
+- Pending Orders
+- Successful Payments
+- Failed Payments
+- Refunds
+- Total Revenue
+- Monthly Revenue
+- Yearly Revenue
+- Expiring Domains
+- Expiring Hosting
+- Pending Registrations
+- Provisioning Errors
+- SSL Status
+- Backup Status
+- Support Tickets
+- Server Health
+
+Provide date filters:
+
+- Today
+- Last 7 Days
+- Last 30 Days
+- This Month
+- This Year
+- Custom Date Range
+
+All statistics must come from real Database records.
+
+3. Customer Management
+
+Show every registered customer and customer who purchases a service.
+
+Customer Details:
+
+- Customer ID
+- Full Name
+- Email
+- Mobile
+- Country
+- Address
+- Registration Date
+- Account Status
+- Domains
+- Hosting Accounts
+- Orders
+- Payment History
+- Renewal History
+- Support Tickets
+
+Admin can:
+
+- Search Customers
+- View Customer Profile
+- View Customer Services
+- View Orders
+- View Payments
+- View Support Tickets
+- Suspend Accounts with a reason
+- Reactivate Accounts
+- Review Customer Activity
+
+Sensitive customer information must be accessible only to authorized roles.
+
+Never show customer passwords, CVV, UPI PIN or OTP.
+
+4. Domain Management
+
+Admin can view:
+
+- Domain Name
+- Customer ID
+- Registrant Details
+- Registration Date
+- Expiry Date
+- Renewal Date
+- Registrar
+- Registrar Transaction ID
+- Domain Status
+- Nameservers
+- DNS Records
+- Transfer Status
+- Auto-Renewal
+- Privacy Status
+
+Admin can:
+
+- Search Domains
+- Filter Domains
+- View Domain Details
+- Review Registration Requests
+- Review Failed Registrations
+- Monitor Renewals
+- Review Transfer Requests
+- View Registrar API Responses
+- Manage supported DNS operations
+- Receive Expiry Alerts
+
+All changes must use authorized Registrar APIs and be recorded in Audit Logs.
+
+Domain ownership must remain with the customer unless the customer explicitly authorizes a lawful ownership change.
+
+5. Hosting Management
+
+Admin can:
+
+- View All Hosting Accounts
+- View Hosting Plan
+- View Customer
+- View Server
+- View Storage Usage
+- View Bandwidth Usage
+- View Hosting Status
+- View Website Deployment Status
+- View SSL Status
+- Suspend Hosting with a recorded reason
+- Reactivate Hosting
+- Monitor Renewal
+- Monitor Server Resources
+- View Backup Status
+- View Hosting Provider API Errors
+
+All hosting actions must be connected to real infrastructure.
+
+6. Order Management
+
+Show:
+
+- Order ID
+- Customer ID
+- Customer Name
+- Domain or Hosting Product
+- Order Amount
+- Tax
+- Discount
+- Final Amount
+- Payment Status
+- Service Status
+- Order Date
+
+Statuses:
+
+- Pending
+- Payment Processing
+- Successful
+- Failed
+- Registration Processing
+- Provisioning Processing
+- Active
+- Cancelled
+- Refund Processing
+- Refunded
+
+Show a complete Order Timeline.
+
+7. Payment Management
+
+Show:
+
+- Payment ID
+- Order ID
+- Customer
+- Payment Gateway
+- Payment Method
+- Transaction ID
+- Amount
+- Payment Date
+- Payment Status
+- Refund Status
+
+Allow filters:
+
+- Successful
+- Pending
+- Failed
+- Processing
+- Refunded
+
+Admin can review payments and request status reconciliation from the Gateway.
+
+Admin must not manually mark a payment Successful without verified payment evidence.
+
+8. Refund Management
+
+Features:
+
+- Refund Request
+- Refund Reason
+- Full Refund
+- Partial Refund where supported
+- Gateway Refund API
+- Refund Transaction ID
+- Refund Status
+- Refund History
+
+Every refund must be recorded in Audit Logs.
+
+9. Hosting Plan Management
+
+Admin can:
+
+- Add Hosting Plan
+- Edit Hosting Plan
+- Disable Hosting Plan
+- Set Price
+- Set Renewal Price
+- Set Validity
+- Set Discount
+- Set Resource Limits
+- Set Promotional Availability
+
+Preserve all plans and prices listed in Part 2.
+
+Do not add the removed ₹49 plan.
+
+10. Domain Pricing Management
+
+Admin can:
+
+- Enable/Disable Supported TLDs
+- Configure Registration Prices
+- Configure Renewal Prices
+- Configure Transfer Prices
+- Configure Discounts
+- Configure Registrar API
+- View Registrar Costs
+- Configure Selling Margins
+
+Never show a price or extension as available if the Registrar does not support it.
+
+11. Website Settings
+
+Admin can manage:
+
+- Website Name
+- Logo
+- Favicon
+- Contact Email
+- Support Number
+- Currency
+- Tax Settings
+- Payment Settings
+- Domain Registrar Settings
+- Hosting Provider Settings
+- Email Settings
+- Notifications
+- SEO Settings
+- Maintenance Mode
+- Policies
+
+Store API Secrets securely in backend secret storage.
+
+Do not display secrets to ordinary Admin users.
+
+12. Admin Roles and Permissions
+
+Create:
+
+- Super Admin
+- Admin
+- Finance Manager
+- Support Manager
+- Technical Manager
+- Read-Only Staff
+
+Super Admin controls all permissions.
+
+Each role should only access its authorized sections.
+
+Require additional authorization for high-risk actions such as:
+
+- Refunds
+- Ownership Changes
+- API Credential Changes
+- Account Deletion
+- Domain Transfer
+- Security Settings
+
+13. Admin Audit Logs
+
+Record:
+
+- Admin ID
+- Date and Time
+- Action
+- Related Customer
+- Related Domain
+- Related Hosting Account
+- Related Order
+- Previous Value
+- New Value
+- Result
+
+Protect important logs from unauthorized deletion or modification.
+
+---
+
+PART 14: CUSTOMER SUPPORT SYSTEM
+
+Create a complete support ticket system.
+
+Customer can:
+
+- Create Ticket
+- Select Category
+- Write Message
+- Attach Supported Files
+- View Reply
+- Close Ticket
+
+Categories:
+
+- Domain
+- Hosting
+- Payment
+- Website Deployment
+- SSL
+- DNS
+- Renewal
+- Other
+
+Admin can:
+
+- View Tickets
+- Assign Staff
+- Reply
+- Change Priority
+- Change Status
+- Close Ticket
+
+Send notifications for ticket updates.
+
+---
+
+PART 15: AUTOMATIC NOTIFICATION SYSTEM
+
+Send email notifications for:
+
+- Account Registration
+- Order Created
+- Payment Successful
+- Payment Failed
+- Domain Registered
+- Domain Registration Failed
+- Hosting Activated
+- Website Deployed
+- SSL Activated
+- Renewal Reminder
+- Renewal Successful
+- Renewal Failed
+- Refund Processed
+- Support Ticket Update
+
+Admin Alerts:
+
+- Registrar API Failure
+- Payment Verification Failure
+- Hosting Provisioning Failure
+- Server Errors
+- SSL Errors
+- Backup Failures
+- Suspicious Login
+- Unusual Payment Activity
+
+Use a real email provider and secure SMTP/API configuration.
+
+---
+
+PART 16: BACKEND, DATABASE AND INFRASTRUCTURE
+
+Use a suitable production architecture.
+
+Suggested technologies:
+
+- Frontend: React or Next.js
+- Backend: Node.js with TypeScript
+- Database: PostgreSQL
+- Background Jobs: Redis and a reliable queue
+- File Storage: Secure Object Storage
+- Authentication: Secure Session or Token-Based System
+- Payment: Real Payment Gateway API
+- Domains: Real Registrar API
+- Hosting: Real Hosting Provider API
+- SSL: Supported Certificate Provider
+- Email: SMTP or Email API
+
+Create:
+
+- Database Migrations
+- API Validation
+- Error Handling
+- Secure Authentication
+- Authorization
+- Rate Limiting
+- Background Jobs
+- Logging
+- Monitoring
+- Backup and Recovery
+- Environment Configuration
+
+Never expose secret keys in frontend code or public repositories.
+
+---
+
+PART 17: AUTOMATION WORKFLOWS
+
+Automate the following processes.
+
+Domain Workflow
+
+DOMAIN SEARCH
+→ AVAILABILITY CHECK
+→ DOMAIN SELECTION
+→ REGISTRATION DETAILS
+→ ORDER CREATION
+→ PAYMENT
+→ PAYMENT VERIFICATION
+→ REGISTRAR API
+→ DOMAIN REGISTRATION
+→ REGISTRAR CONFIRMATION
+→ CUSTOMER DASHBOARD UPDATE
+→ ADMIN DASHBOARD UPDATE
+
+Hosting Workflow
+
+HOSTING PLAN
+→ ORDER
+→ PAYMENT
+→ PAYMENT VERIFICATION
+→ HOSTING PROVIDER API
+→ ACCOUNT PROVISIONING
+→ CUSTOMER DASHBOARD UPDATE
+→ ADMIN DASHBOARD UPDATE
+
+Website Deployment Workflow
+
+ZIP UPLOAD
+→ FILE VALIDATION
+→ SAFE EXTRACTION
+→ WEBSITE ROOT SELECTION
+→ DEPLOYMENT
+→ DOMAIN CONNECTION
+→ DNS VERIFICATION
+→ SSL PROVISIONING
+→ WEBSITE HEALTH CHECK
+→ WEBSITE LIVE
+
+Renewal Workflow
+
+EXPIRY TRACKING
+→ CUSTOMER NOTIFICATION
+→ RENEWAL ORDER
+→ PAYMENT
+→ PAYMENT VERIFICATION
+→ RENEWAL API
+→ CONFIRMATION
+→ DASHBOARD UPDATE
+
+All workflows must be retry-safe and must not create duplicate payments, orders, registrations or provisioning requests.
+
+---
+
+PART 18: SECURITY AND CUSTOMER PRIVACY
+
+Implement:
+
+- HTTPS
+- Secure Password Hashing
+- Database Access Controls
+- Encryption for Sensitive Personal Data
+- Secure File Upload
+- ZIP Extraction Protection
+- CSRF Protection where applicable
+- XSS Protection
+- SQL Injection Protection
+- Rate Limiting
+- Session Security
+- API Authentication
+- Admin 2FA
+- Audit Logs
+- Backup and Recovery
+
+Collect only the customer information required to provide the service.
+
+Do not ask customers for unnecessary KYC documents.
+
+Do not collect or store card CVV, UPI PIN or OTP.
+
+Follow applicable privacy and payment security requirements.
+
+---
+
+PART 19: SEO AND WEBSITE PERFORMANCE
+
+Implement:
+
+- SEO-Friendly URLs
+- Page Titles
+- Meta Descriptions
+- Canonical URLs
+- XML Sitemap
+- Robots.txt
+- Structured Data where appropriate
+- Mobile-Friendly Design
+- Fast Loading
+- Optimized Images
+- Internal Linking
+- Search Console Verification Support
+
+Do not promise guaranteed Google rankings or instant indexing.
+
+---
+
+PART 20: DEVELOPMENT AND TESTING REQUIREMENTS
+
+Do not build the entire platform as a fake frontend demo.
+
+Develop it in clearly defined phases.
+
+Phase 1
+
+Public Website, Branding and Responsive Pages.
+
+Phase 2
+
+Customer Authentication and Dashboard.
+
+Phase 3
+
+Hosting Plans and Domain Search.
+
+Phase 4
+
+Real Registrar Integration.
+
+Phase 5
+
+Real Payment Gateway Integration.
+
+Phase 6
+
+Real Hosting Provider Integration.
+
+Phase 7
+
+ZIP Upload, File Manager and Deployment.
+
+Phase 8
+
+DNS and SSL Management.
+
+Phase 9
+
+Complete Admin Panel.
+
+Phase 10
+
+Automation, Notifications, Renewals and Support.
+
+Phase 11
+
+Security, Testing and Production Deployment.
+
+For every phase:
+
+- Build the feature.
+- Connect its Backend.
+- Connect its Database.
+- Test all buttons and actions.
+- Test successful and failed cases.
+- Fix errors.
+- Document configuration.
+- Confirm integration status.
+
+If an external API account, server, Registrar or Gateway is not configured, clearly mark that integration as Pending Configuration.
+
+Do not invent successful API responses.
+
+Do not show fake payments, fake customers, fake domains or fake hosting accounts.
+
+---
+
+FINAL PROJECT REQUIREMENT
+
+The final result must be a complete Hosting and Domain Registration Business Platform.
+
+Customers must be able to:
+
+1. Create an Account.
+2. Search for Domains.
+3. Buy Domains.
+4. Submit Registrant Details.
+5. Pay through available UPI, Debit Card, Credit Card and other supported payment methods.
+6. Receive real Domain Registration Confirmation.
+7. Purchase Hosting.
+8. Upload Existing Website ZIP Files.
+9. Deploy Their Websites.
+10. Connect Domains.
+11. Manage DNS.
+12. Activate SSL.
+13. Renew Services.
+14. Manage Everything Through Their Customer Dashboard.
+15. Contact Support.
+
+The Admin must be able to:
+
+1. Manage Customers.
+2. View Customer Details with proper authorization.
+3. Manage Domains.
+4. Manage Hosting Accounts.
+5. Manage Orders.
+6. Monitor Payments.
+7. Process Authorized Refunds.
+8. Manage Hosting Plans.
+9. Manage Domain Pricing.
+10. Manage Registrar Integrations.
+11. Manage Hosting Provider Integrations.
+12. Monitor Servers.
+13. Monitor Renewals.
+14. Manage Support.
+15. Configure Website Settings.
+16. Manage Staff Roles.
+17. Review Audit Logs.
+18. Monitor the Entire Business from One Admin Dashboard.
+
+NON-NEGOTIABLE INSTRUCTIONS
+
+- Preserve every feature and every plan in this Master Prompt.
+- Do not add the ₹49 plan.
+- Keep the ₹1/year promotional plan.
+- Do not create an AI Website Builder.
+- Do not replace real functionality with fake demo buttons.
+- Do not claim a service is active until the actual provider confirms it.
+- Do not change customer domain ownership without authorization.
+- Do not store sensitive payment credentials.
+- Do not request unnecessary KYC documents from customers.
+- Follow actual Registrar, Hosting Provider, Payment Gateway and applicable legal requirements.
+- Build a secure, scalable and maintainable system.
+- Explain clearly what has been implemented and what still requires external account credentials or configuration.
+
+The platform should be designed for real business operations, not just a visual prototype.
