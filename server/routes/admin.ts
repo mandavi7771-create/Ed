@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { db, HostingPlan, TldPricing, User } from '../db.js';
+import { registrarService } from '../services/registrar.js';
 
 export const adminRouter = Router();
 
@@ -815,6 +816,69 @@ adminRouter.get('/payment-settings/pending-payments', requireAdmin, (req: Reques
 adminRouter.get('/payment-settings/refunds', requireAdmin, (req: Request, res: Response) => {
   try {
     return res.json({ refunds: db.getRefundRecords() });
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message });
+  }
+});
+
+// POST /api/admin/registrar-settings/test - Test Live Connection to Central Registry / Wholesale API
+adminRouter.post('/registrar-settings/test', requireAdmin, async (req: Request, res: Response) => {
+  try {
+    const testDomain = (req.body.testDomain as string) || 'google.com';
+    const settings = db.getSettings();
+    const result = await registrarService.checkAuthoritativeAvailability(testDomain);
+
+    const testPassed = result.status === 'registered'; // google.com must resolve as registered
+
+    return res.json({
+      success: testPassed,
+      testedDomain: testDomain,
+      result,
+      provider: settings.registrarApiConfigured ? 'ResellerClub / Custom Wholesale API' : 'Authoritative ICANN Registry Connector (RDAP + Anycast DoH)',
+      endpoint: settings.registrarEndpoint || 'https://rdap.verisign.com',
+      message: testPassed
+        ? `Live connection to ${result.verifiedVia} verified successfully. Latency: ${result.queryLatencyMs}ms.`
+        : `Connection test completed: ${result.statusMessage}`,
+    });
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message || 'Error testing registrar connection' });
+  }
+});
+
+// GET /api/admin/readiness-report - Production Readiness Report (Requirement 17)
+adminRouter.get('/readiness-report', requireAdmin, (req: Request, res: Response) => {
+  try {
+    const report = registrarService.generateProductionReadinessReport();
+    return res.json({ report });
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message });
+  }
+});
+
+// POST /api/admin/run-acceptance-test - Real-World 10-Step Acceptance Test Runner (Requirement 15)
+adminRouter.post('/run-acceptance-test', requireAdmin, async (req: Request, res: Response) => {
+  try {
+    const customDomain = req.body.domain as string;
+    const testResult = await registrarService.runRealWorldAcceptanceTest(customDomain);
+
+    db.addAuditLog({
+      id: `LOG-${Date.now()}`,
+      adminId: 'ADM-1001',
+      adminEmail: 'admin@nexoracloud.com',
+      action: 'REAL_WORLD_ACCEPTANCE_TEST_EXECUTED',
+      entityType: 'settings',
+      entityId: testResult.testId,
+      newValue: {
+        testDomain: testResult.testDomain,
+        allPassed: testResult.allPassed,
+        stepCount: testResult.steps.length,
+      },
+      result: testResult.allPassed ? 'success' : 'failure',
+      ipAddress: (req.ip || '127.0.0.1').toString(),
+      timestamp: new Date().toISOString(),
+    });
+
+    return res.json({ testResult });
   } catch (err: any) {
     return res.status(500).json({ error: err.message });
   }

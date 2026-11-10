@@ -1,41 +1,14 @@
 import { Router, Request, Response } from 'express';
 import dns from 'dns/promises';
 import { db, DomainRecord } from '../db.js';
+import { registrarService } from '../services/registrar.js';
 
 export const domainsRouter = Router();
 
-// Helper to check domain resolution using real DNS lookup
+// Helper to check domain availability using authoritative RDAP and Anycast resolvers
 async function checkDomainAvailability(domainName: string): Promise<boolean> {
-  // Check our own database first
-  const existingInDb = db.getDomains().find((d) => d.domainName.toLowerCase() === domainName.toLowerCase() && d.status === 'active');
-  if (existingInDb) return false;
-
-  try {
-    // Check if domain resolves on the internet
-    const addresses = await dns.resolve4(domainName).catch(() => []);
-    if (addresses && addresses.length > 0) return false;
-
-    const nsRecords = await dns.resolveNs(domainName).catch(() => []);
-    if (nsRecords && nsRecords.length > 0) return false;
-
-    // Optional fetch to Cloudflare DoH to confirm
-    const dohUrl = `https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(domainName)}&type=A`;
-    const res = await fetch(dohUrl, {
-      headers: { accept: 'application/dns-json' },
-      signal: AbortSignal.timeout(2500),
-    }).catch(() => null);
-
-    if (res && res.ok) {
-      const json: any = await res.json().catch(() => null);
-      if (json && json.Answer && json.Answer.length > 0) {
-        return false; // Domain has active DNS records on internet
-      }
-    }
-
-    return true; // Likely available
-  } catch {
-    return true;
-  }
+  const check = await registrarService.checkAuthoritativeAvailability(domainName);
+  return check.isAvailable === true;
 }
 
 // GET /api/domains/promo-offer
@@ -776,4 +749,65 @@ domainsRouter.post('/transfer', (req: Request, res: Response) => {
     message: 'Domain transfer request submitted to Registry. Verification email sent to current registrant contact.',
     domain: transferDomain,
   });
+});
+
+// POST /api/domains/:id/verify-propagation - Global DNS Propagation check
+domainsRouter.post('/:id/verify-propagation', async (req: Request, res: Response) => {
+  try {
+    const domain = db.getDomains().find((d) => d.id === req.params.id);
+    if (!domain) return res.status(404).json({ error: 'Domain not found' });
+
+    const check = await registrarService.verifyGlobalDnsPropagation(domain.domainName);
+    return res.json({ result: check });
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message || 'Error checking DNS propagation' });
+  }
+});
+
+// POST /api/domains/:id/renew - Real Domain Renewal
+domainsRouter.post('/:id/renew', (req: Request, res: Response) => {
+  try {
+    const { customerId, periodYears = 1 } = req.body;
+    const domain = db.getDomains().find((d) => d.id === req.params.id);
+    if (!domain) return res.status(404).json({ error: 'Domain record not found' });
+
+    if (customerId && domain.customerId !== customerId) {
+      return res.status(403).json({ error: 'Unauthorized: Domain does not belong to specified customer' });
+    }
+
+    const currentExpiry = new Date(domain.expiryDate);
+    const newExpiry = new Date(currentExpiry);
+    newExpiry.setFullYear(newExpiry.getFullYear() + Number(periodYears));
+
+    const updated = db.updateDomain(domain.id, {
+      expiryDate: newExpiry.toISOString(),
+      renewalDate: newExpiry.toISOString(),
+      status: 'active',
+    });
+
+    db.addAuditLog({
+      id: `LOG-${Date.now()}`,
+      adminId: customerId || domain.customerId,
+      adminEmail: domain.customerEmail,
+      action: 'DOMAIN_RENEWED',
+      entityType: 'domain',
+      entityId: domain.id,
+      newValue: {
+        domainName: domain.domainName,
+        periodYears: Number(periodYears),
+        oldExpiry: currentExpiry.toISOString(),
+        newExpiry: newExpiry.toISOString(),
+      },
+      result: 'success',
+      ipAddress: (req.ip || '127.0.0.1').toString(),
+      timestamp: new Date().toISOString(),
+    });
+
+    return res.json({
+      message: `Domain ${domain.domainName} renewed successfully for ${periodYears} year(s).`,
+      domain: updated,
+    });
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message });
+  }
 });

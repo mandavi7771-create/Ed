@@ -195,10 +195,8 @@ const AppContent: React.FC = () => {
       publicContent = <FaqPage navigate={navigate} />;
     } else if (currentPath === '/help-center') {
       publicContent = <HelpCenterPage navigate={navigate} />;
-    } else if (currentPath === '/login') {
+    } else if (currentPath === '/login' || currentPath === '/register' || currentPath === '/signup') {
       publicContent = <LoginPage navigate={navigate} />;
-    } else if (currentPath === '/register') {
-      publicContent = <RegisterPage navigate={navigate} />;
     } else if (currentPath === '/forgot-password') {
       publicContent = <ForgotPasswordPage navigate={navigate} />;
     } else if (currentPath === '/terms') {

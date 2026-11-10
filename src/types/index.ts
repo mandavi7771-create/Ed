@@ -415,3 +415,56 @@ export interface RefundRecord {
   status: 'successful' | 'processing' | 'failed';
   createdAt: string;
 }
+
+export interface GlobalDnsCheckResult {
+  domainName: string;
+  nameservers: {
+    cloudflare: string[];
+    google: string[];
+    isPropagated: boolean;
+  };
+  aRecords: {
+    cloudflare: string[];
+    google: string[];
+  };
+  testedAt: string;
+}
+
+export interface AcceptanceTestStep {
+  step: number;
+  title: string;
+  description: string;
+  status: 'passed' | 'failed' | 'in_progress' | 'pending';
+  timestamp?: string;
+  details?: any;
+}
+
+export interface AcceptanceTestResult {
+  testId: string;
+  testDomain: string;
+  allPassed: boolean;
+  executedAt: string;
+  steps: AcceptanceTestStep[];
+}
+
+export interface ProductionReadinessItem {
+  id: string;
+  category: 'Domains' | 'DNS' | 'Portability' | 'Hosting' | 'Payments' | 'Security';
+  title: string;
+  status: 'Working and Verified' | 'Configuration Required' | 'Provider Approval Required' | 'Not Supported' | 'Failed Verification';
+  details: string;
+  evidenceOrRequirement: string;
+}
+
+export interface ProductionReadinessReport {
+  generatedAt: string;
+  overallStatus: 'Ready for Live Reseller Credentials' | 'Pending Provider Credentials';
+  summary: {
+    workingAndVerified: number;
+    configurationRequired: number;
+    providerApprovalRequired: number;
+    notSupported: number;
+    failedVerification: number;
+  };
+  items: ProductionReadinessItem[];
+}

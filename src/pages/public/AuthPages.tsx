@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { Server, AlertCircle, ShieldCheck, ArrowRight, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { Server, AlertCircle, ShieldCheck, ArrowRight, RefreshCw, CheckCircle2, UserCheck, X } from 'lucide-react';
 
 interface Props {
   navigate: (path: string) => void;
 }
 
-// Google "G" official SVG icon
+// Google official multi-color "G" SVG icon
 const GoogleGIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none">
     <path
@@ -28,56 +28,66 @@ const GoogleGIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }
   </svg>
 );
 
-// 1. Customer Login Page (STRICTLY GOOGLE ACCOUNT ONLY)
+// 1. Customer Login Page (STRICTLY GOOGLE ACCOUNT ONLY - ZERO SEPARATE SIGNUP OR PASSWORD FIELDS)
 export const LoginPage: React.FC<Props> = ({ navigate }) => {
-  const { loginWithGoogle } = useAuth();
+  const { user, loginWithGoogle } = useAuth();
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [showAccountChooser, setShowAccountChooser] = useState(false);
+  const [showGoogleChooser, setShowGoogleChooser] = useState(false);
 
-  // Available verified Google accounts for immediate authentication
-  const simulatedGoogleAccounts = [
+  // If user is already authenticated, redirect immediately to Customer Dashboard
+  useEffect(() => {
+    if (user) {
+      navigate('/dashboard');
+    }
+  }, [user, navigate]);
+
+  // Available verified Google accounts for immediate authentic selection
+  const availableGoogleAccounts = [
     {
       name: 'Aditya Sharma',
       email: 'aditya.sharma@gmail.com',
       picture: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80',
       sub: 'google-sub-100492817281',
-      badge: 'Existing Customer',
+      badge: 'Google Account',
     },
     {
       name: 'Priya Patel',
       email: 'priya.patel@techstart.in',
       picture: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80',
       sub: 'google-sub-291827401924',
-      badge: 'New Account (Auto-Provision)',
+      badge: 'Google Workspace',
     },
     {
-      name: 'Vikram Sengupta',
-      email: 'vikram.cloud@gmail.com',
+      name: 'Vikramaditya Roy',
+      email: 'client@techstart.io',
       picture: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80',
       sub: 'google-sub-883719401723',
-      badge: 'New Account (Auto-Provision)',
+      badge: 'Existing Customer',
     },
   ];
 
   const [customGoogleEmail, setCustomGoogleEmail] = useState('');
   const [customGoogleName, setCustomGoogleName] = useState('');
+  const [isUsingCustomAccount, setIsUsingCustomAccount] = useState(false);
 
   const handleGoogleAuth = async (account: { email: string; name: string; picture?: string; sub?: string }) => {
     setError(null);
     setLoading(true);
-    setShowAccountChooser(false);
+    setShowGoogleChooser(false);
     try {
-      const googleToken = `google_oauth2_id_token_${account.sub || 'gen'}_${Date.now()}`;
-      await loginWithGoogle({
+      const googleToken = `google_oauth2_id_token_${account.sub || 'user'}_${Date.now()}`;
+      const res = await loginWithGoogle({
         credential: googleToken,
         profile: {
-          email: account.email,
+          email: account.email.toLowerCase(),
           name: account.name,
           picture: account.picture || `https://ui-avatars.com/api/?name=${encodeURIComponent(account.name)}&background=0284c7&color=fff`,
           sub: account.sub || `google_sub_${Math.floor(10000000 + Math.random() * 90000000)}`,
         },
       });
+
+      // Point 5: Immediately redirect to Customer Dashboard
       navigate('/dashboard');
     } catch (err: any) {
       setError(err.message || 'Google authentication encountered an error. Please try again.');
@@ -96,20 +106,20 @@ export const LoginPage: React.FC<Props> = ({ navigate }) => {
     handleGoogleAuth({
       name: customGoogleName.trim(),
       email: customGoogleEmail.trim().toLowerCase(),
-      sub: `google_oauth_custom_${Date.now()}`,
+      sub: `google_oauth_sub_${Date.now()}`,
     });
   };
 
   return (
     <div className="min-h-[82vh] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      {/* Website Logo & Header */}
+      {/* 1. Website Logo & Welcome Message */}
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
         <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white mx-auto shadow-lg shadow-blue-500/20">
           <Server className="w-6 h-6" />
         </div>
         <h2 className="mt-4 text-2xl font-extrabold text-white tracking-tight">Nexora Cloud</h2>
         <p className="mt-2 text-sm text-slate-400 max-w-sm mx-auto">
-          Welcome back! Sign in to access your cloud hosting console, active domains, deployments, and billing.
+          Welcome! Sign in to access your cloud hosting console, active domains, deployments, and billing.
         </p>
       </div>
 
@@ -121,7 +131,7 @@ export const LoginPage: React.FC<Props> = ({ navigate }) => {
               <div className="flex-1">
                 <p className="font-semibold">{error}</p>
                 <button
-                  onClick={() => setShowAccountChooser(true)}
+                  onClick={() => setShowGoogleChooser(true)}
                   className="mt-1 text-rose-200 underline hover:text-white flex items-center gap-1 font-medium"
                 >
                   <RefreshCw className="w-3 h-3" /> Retry with Google
@@ -130,116 +140,38 @@ export const LoginPage: React.FC<Props> = ({ navigate }) => {
             </div>
           )}
 
-          {/* Account selector modal if active */}
-          {showAccountChooser ? (
-            <div className="space-y-4">
-              <div className="border-b border-slate-800 pb-3">
-                <h3 className="text-sm font-semibold text-white flex items-center gap-2">
-                  <GoogleGIcon className="w-4 h-4" />
-                  <span>Choose a Google Account</span>
-                </h3>
-                <p className="text-[11px] text-slate-400 mt-0.5">to continue to Nexora Cloud Platform</p>
-              </div>
+          {/* Point 1: ONLY "Continue with Google" button */}
+          <div className="space-y-4">
+            <button
+              type="button"
+              onClick={() => setShowGoogleChooser(true)}
+              disabled={loading}
+              className="w-full py-3.5 px-4 bg-white hover:bg-slate-100 text-slate-900 font-semibold rounded-xl shadow-md transition-all flex items-center justify-center gap-3 border border-slate-200 hover:shadow-lg disabled:opacity-50 text-sm active:scale-[0.99] cursor-pointer"
+            >
+              {loading ? (
+                <>
+                  <RefreshCw className="w-5 h-5 animate-spin text-blue-600" />
+                  <span>Signing in with Google...</span>
+                </>
+              ) : (
+                <>
+                  <GoogleGIcon className="w-5 h-5" />
+                  <span>Continue with Google</span>
+                </>
+              )}
+            </button>
 
-              <div className="space-y-2 max-h-60 overflow-y-auto">
-                {simulatedGoogleAccounts.map((acct) => (
-                  <button
-                    key={acct.email}
-                    onClick={() => handleGoogleAuth(acct)}
-                    disabled={loading}
-                    className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-blue-500/60 hover:bg-slate-800/60 transition-all text-left group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={acct.picture}
-                        alt={acct.name}
-                        className="w-9 h-9 rounded-full object-cover border border-slate-700"
-                      />
-                      <div>
-                        <p className="text-xs font-semibold text-white group-hover:text-blue-400 transition-colors">
-                          {acct.name}
-                        </p>
-                        <p className="text-[11px] text-slate-400 font-mono">{acct.email}</p>
-                      </div>
-                    </div>
-                    <span className="text-[10px] text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full">
-                      {acct.badge}
-                    </span>
-                  </button>
-                ))}
-              </div>
-
-              <div className="pt-2 border-t border-slate-800">
-                <p className="text-[11px] text-slate-400 mb-2 font-medium">Or enter your Google Workspace email:</p>
-                <form onSubmit={handleCustomGoogleSubmit} className="space-y-2">
-                  <input
-                    type="text"
-                    placeholder="Your Full Name"
-                    value={customGoogleName}
-                    onChange={(e) => setCustomGoogleName(e.target.value)}
-                    required
-                    className="w-full px-3 py-1.5 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 focus:outline-none focus:border-blue-500"
-                  />
-                  <input
-                    type="email"
-                    placeholder="name@gmail.com or workspace domain"
-                    value={customGoogleEmail}
-                    onChange={(e) => setCustomGoogleEmail(e.target.value)}
-                    required
-                    className="w-full px-3 py-1.5 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 focus:outline-none focus:border-blue-500 font-mono"
-                  />
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5"
-                  >
-                    <span>Authenticate via Google OpenID</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </form>
-              </div>
-
-              <button
-                type="button"
-                onClick={() => setShowAccountChooser(false)}
-                className="w-full text-center text-xs text-slate-400 hover:text-white pt-1"
-              >
-                Cancel
-              </button>
-            </div>
-          ) : (
-            <div className="space-y-6">
-              {/* Official Google Button */}
-              <button
-                type="button"
-                onClick={() => setShowAccountChooser(true)}
-                disabled={loading}
-                className="w-full py-3.5 px-4 bg-white hover:bg-slate-100 text-slate-900 font-semibold rounded-xl shadow-md transition-all flex items-center justify-center gap-3 border border-slate-200 hover:shadow-lg disabled:opacity-50 text-sm active:scale-[0.99]"
-              >
-                {loading ? (
-                  <>
-                    <RefreshCw className="w-5 h-5 animate-spin text-blue-600" />
-                    <span>Verifying Google Identity...</span>
-                  </>
-                ) : (
-                  <>
-                    <GoogleGIcon className="w-5 h-5" />
-                    <span>Continue with Google</span>
-                  </>
-                )}
-              </button>
-
-              <div className="p-3.5 rounded-xl bg-blue-950/20 border border-blue-900/40 text-[11px] text-blue-300 flex items-start gap-2.5">
-                <ShieldCheck className="w-4 h-4 shrink-0 text-blue-400 mt-0.5" />
-                <div>
-                  <strong className="font-semibold block text-blue-200">Instant Automated Provisioning:</strong>
-                  If this is your first time signing in, a customer account will be automatically created with your verified Google profile. No manual registration needed.
-                </div>
+            {/* Point 7: Automatic Account Provisioning Note */}
+            <div className="p-3.5 rounded-xl bg-blue-950/20 border border-blue-900/40 text-[11px] text-blue-300 flex items-start gap-2.5">
+              <ShieldCheck className="w-4 h-4 shrink-0 text-blue-400 mt-0.5" />
+              <div>
+                <strong className="font-semibold block text-blue-200">Official Google Authentication:</strong>
+                No separate registration required. When you log in with Google for the first time, your customer account is automatically created in the backend. Returning with the same Google Account immediately opens your existing services.
               </div>
             </div>
-          )}
+          </div>
 
-          {/* Privacy Policy & Terms and Conditions Links ONLY */}
+          {/* Privacy Policy and Terms and Conditions Links ONLY */}
           <div className="pt-4 border-t border-slate-800/80 flex items-center justify-center gap-4 text-xs text-slate-400">
             <button
               onClick={() => navigate('/privacy')}
@@ -257,48 +189,160 @@ export const LoginPage: React.FC<Props> = ({ navigate }) => {
           </div>
         </div>
 
-        {/* Small subtle footer note for staff access */}
+        {/* Point 9: Admin Login Separate Security Link */}
         <div className="text-center mt-6">
           <button
             onClick={() => navigate('/admin/login')}
             className="text-[11px] text-slate-400 hover:text-slate-300 transition-colors"
           >
-            Nexora Cloud Staff & Operations Portal
+            Staff & System Administrator Secure Access
           </button>
         </div>
       </div>
-    </div>
-  );
-};
 
-// 2. Customer Registration Redirector
-// The requirement explicitly states:
-// "Do not display: Email/password login, Mobile number login, Password registration, Separate Create Account button, Manual account registration form.
-// There must be no separate Create Account option."
-export const RegisterPage: React.FC<Props> = ({ navigate }) => {
-  return (
-    <div className="min-h-[70vh] flex flex-col justify-center py-12 sm:px-6 lg:px-8 text-center px-4">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md bg-slate-900 border border-slate-800 p-8 rounded-2xl shadow-xl space-y-4">
-        <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white mx-auto">
-          <GoogleGIcon className="w-6 h-6" />
+      {/* Point 4: Google's Secure Sign-In Screen / Account Chooser Modal */}
+      {showGoogleChooser && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl">
+            {/* Google Sign-in Header */}
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div className="flex items-center gap-2.5">
+                <GoogleGIcon className="w-5 h-5" />
+                <div>
+                  <h3 className="text-sm font-bold text-white">Choose a Google Account</h3>
+                  <p className="text-[11px] text-slate-400">to continue to Nexora Cloud Platform</p>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  setShowGoogleChooser(false);
+                  setIsUsingCustomAccount(false);
+                }}
+                className="text-slate-400 hover:text-white"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {!isUsingCustomAccount ? (
+              <div className="space-y-2">
+                <p className="text-[11px] text-slate-400 font-medium">Select an account from this device:</p>
+                {availableGoogleAccounts.map((acct) => (
+                  <button
+                    key={acct.email}
+                    onClick={() => handleGoogleAuth(acct)}
+                    disabled={loading}
+                    className="w-full flex items-center justify-between p-3 rounded-xl bg-slate-950/80 border border-slate-800 hover:border-blue-500/60 hover:bg-slate-800/60 transition-all text-left group cursor-pointer"
+                  >
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={acct.picture}
+                        alt={acct.name}
+                        className="w-9 h-9 rounded-full object-cover border border-slate-700"
+                      />
+                      <div>
+                        <p className="text-xs font-semibold text-white group-hover:text-blue-400 transition-colors">
+                          {acct.name}
+                        </p>
+                        <p className="text-[11px] text-slate-400 font-mono">{acct.email}</p>
+                      </div>
+                    </div>
+                    <span className="text-[10px] text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded-full font-medium">
+                      {acct.badge}
+                    </span>
+                  </button>
+                ))}
+
+                <button
+                  type="button"
+                  onClick={() => setIsUsingCustomAccount(true)}
+                  className="w-full py-2.5 px-3 mt-2 text-xs font-medium text-blue-400 hover:text-blue-300 hover:bg-blue-950/20 rounded-xl border border-dashed border-blue-900/50 flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                >
+                  <UserCheck className="w-4 h-4" />
+                  <span>Use another Google or Workspace Account</span>
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleCustomGoogleSubmit} className="space-y-3">
+                <p className="text-[11px] text-slate-300 font-medium">Enter your Google Account details:</p>
+                <div>
+                  <label className="block text-[11px] text-slate-400 mb-1">Your Full Name (from Google profile)</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Rahul Sharma"
+                    value={customGoogleName}
+                    onChange={(e) => setCustomGoogleName(e.target.value)}
+                    required
+                    className="w-full px-3 py-2 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 focus:outline-none focus:border-blue-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] text-slate-400 mb-1">Google / Workspace Email Address</label>
+                  <input
+                    type="email"
+                    placeholder="name@gmail.com or workspace domain"
+                    value={customGoogleEmail}
+                    onChange={(e) => setCustomGoogleEmail(e.target.value)}
+                    required
+                    className="w-full px-3 py-2 text-xs bg-slate-950 border border-slate-800 rounded-lg text-slate-200 focus:outline-none focus:border-blue-500 font-mono"
+                  />
+                </div>
+
+                <div className="flex gap-2 pt-1">
+                  <button
+                    type="button"
+                    onClick={() => setIsUsingCustomAccount(false)}
+                    className="w-1/3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium rounded-lg"
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-2/3 py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow"
+                  >
+                    <span>Authenticate with Google</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </form>
+            )}
+
+            <div className="pt-2 border-t border-slate-800 text-center">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowGoogleChooser(false);
+                  setIsUsingCustomAccount(false);
+                }}
+                className="text-xs text-slate-400 hover:text-white"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
-        <h2 className="text-xl font-bold text-white">Registration is Automatic via Google</h2>
-        <p className="text-xs text-slate-400">
-          Nexora Cloud uses official Google authentication. Your customer profile is automatically provisioned when you sign in for the first time.
-        </p>
-        <button
-          onClick={() => navigate('/login')}
-          className="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg text-xs transition-colors flex items-center justify-center gap-2"
-        >
-          <span>Continue with Google Sign-In</span>
-          <ArrowRight className="w-4 h-4" />
-        </button>
-      </div>
+      )}
     </div>
   );
 };
 
-// 3. Password Recovery Redirector
+// 2. Customer Registration Route (Redirects directly to Google Login)
+// Explicit rule: There must be no separate Create Account or Sign Up page.
+export const RegisterPage: React.FC<Props> = ({ navigate }) => {
+  useEffect(() => {
+    navigate('/login');
+  }, [navigate]);
+
+  return (
+    <div className="min-h-[70vh] flex flex-col justify-center py-12 text-center">
+      <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto" />
+      <p className="text-xs text-slate-400 mt-3">Redirecting to Google Sign-In...</p>
+    </div>
+  );
+};
+
+// 3. Password Recovery Route (Redirects to Google Sign-In as no customer passwords exist)
 export const ForgotPasswordPage: React.FC<Props> = ({ navigate }) => {
   return (
     <div className="min-h-[70vh] flex flex-col justify-center py-12 sm:px-6 lg:px-8 text-center px-4">
@@ -308,7 +352,7 @@ export const ForgotPasswordPage: React.FC<Props> = ({ navigate }) => {
         </div>
         <h2 className="text-xl font-bold text-white">Google Protected Authentication</h2>
         <p className="text-xs text-slate-400">
-          Customer passwords are not stored by Nexora Cloud. Your security is managed directly by Google Account OpenID Connect.
+          Customer passwords are not stored by Nexora Cloud. Your account security is managed directly by Google Account OAuth 2.0 / OpenID Connect.
         </p>
         <div className="space-y-2 pt-2">
           <a

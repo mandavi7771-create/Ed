@@ -20,6 +20,9 @@ import {
   PaymentAttempt,
   PaymentWebhook,
   RefundRecord,
+  AcceptanceTestResult,
+  ProductionReadinessReport,
+  GlobalDnsCheckResult,
 } from '../types';
 
 const API_BASE = '/api';
@@ -863,6 +866,54 @@ export const api = {
 
   async getAdminRefundRecords(): Promise<{ refunds: RefundRecord[] }> {
     const res = await fetch(`${API_BASE}/admin/payment-settings/refunds`, { headers: getHeaders() });
+    return handleResponse(res);
+  },
+
+  // Authoritative Registrar & Portability Integrations
+  async verifyDomainPropagation(domainId: string): Promise<{ result: GlobalDnsCheckResult }> {
+    const res = await fetch(`${API_BASE}/domains/${domainId}/verify-propagation`, {
+      method: 'POST',
+      headers: getHeaders(),
+    });
+    return handleResponse(res);
+  },
+
+  async renewDomain(domainId: string, customerId: string, periodYears: number = 1): Promise<{ message: string; domain: DomainRecord }> {
+    const res = await fetch(`${API_BASE}/domains/${domainId}/renew`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ customerId, periodYears }),
+    });
+    return handleResponse(res);
+  },
+
+  async testRegistrarConnection(testDomain: string = 'google.com'): Promise<{
+    success: boolean;
+    testedDomain: string;
+    result: any;
+    provider: string;
+    endpoint: string;
+    message: string;
+  }> {
+    const res = await fetch(`${API_BASE}/admin/registrar-settings/test`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ testDomain }),
+    });
+    return handleResponse(res);
+  },
+
+  async getReadinessReport(): Promise<{ report: ProductionReadinessReport }> {
+    const res = await fetch(`${API_BASE}/admin/readiness-report`, { headers: getHeaders() });
+    return handleResponse(res);
+  },
+
+  async runAcceptanceTest(domain?: string): Promise<{ testResult: AcceptanceTestResult }> {
+    const res = await fetch(`${API_BASE}/admin/run-acceptance-test`, {
+      method: 'POST',
+      headers: getHeaders(),
+      body: JSON.stringify({ domain }),
+    });
     return handleResponse(res);
   },
 };

@@ -1,16 +1,32 @@
 import fs from 'fs';
 import path from 'path';
 
-// Define Storage Directories
-const DATA_DIR = path.resolve(process.cwd(), 'data');
-const DB_FILE = path.join(DATA_DIR, 'nexora_db.json');
-export const HOSTING_STORAGE_DIR = path.resolve(process.cwd(), 'storage', 'hosting');
-export const UPLOADS_DIR = path.resolve(process.cwd(), 'storage', 'uploads');
+// Define Storage Directories with safe serverless fallback for Netlify/Lambda
+function getSafeStoragePath(dirName: string): string {
+  try {
+    const localPath = path.resolve(process.cwd(), dirName);
+    if (!fs.existsSync(localPath)) {
+      fs.mkdirSync(localPath, { recursive: true });
+    }
+    const testFile = path.join(localPath, '.write_test');
+    fs.writeFileSync(testFile, 'ok');
+    fs.unlinkSync(testFile);
+    return localPath;
+  } catch {
+    const tmpPath = path.resolve('/tmp', dirName);
+    if (!fs.existsSync(tmpPath)) {
+      try {
+        fs.mkdirSync(tmpPath, { recursive: true });
+      } catch {}
+    }
+    return tmpPath;
+  }
+}
 
-// Ensure directories exist
-if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-if (!fs.existsSync(HOSTING_STORAGE_DIR)) fs.mkdirSync(HOSTING_STORAGE_DIR, { recursive: true });
-if (!fs.existsSync(UPLOADS_DIR)) fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+const DATA_DIR = getSafeStoragePath('data');
+const DB_FILE = path.join(DATA_DIR, 'nexora_db.json');
+export const HOSTING_STORAGE_DIR = getSafeStoragePath('storage/hosting');
+export const UPLOADS_DIR = getSafeStoragePath('storage/uploads');
 
 export interface User {
   id: string; // e.g., CUST-1001 or ADM-101

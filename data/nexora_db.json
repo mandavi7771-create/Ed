@@ -87,6 +87,24 @@
       "avatarUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80",
       "createdAt": "2026-11-08T09:46:46.952Z",
       "updatedAt": "2026-11-08T09:46:46.952Z"
+    },
+    {
+      "id": "CUST-1006",
+      "fullName": "Rahul Verma",
+      "email": "testuser99@gmail.com",
+      "passwordHash": "GOOGLE_AUTH_google_sub_99887711",
+      "mobile": "+91 9876543210",
+      "country": "India",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "address": "Verified Google Identity",
+      "postalCode": "560001",
+      "role": "customer",
+      "status": "active",
+      "googleId": "google_sub_99887711",
+      "avatarUrl": "https://lh3.googleusercontent.com/a/default-user=s96-c",
+      "createdAt": "2026-11-10T09:23:26.792Z",
+      "updatedAt": "2026-11-10T09:23:37.804Z"
     }
   ],
   "plans": [
@@ -427,8 +445,8 @@
       "registrar": "ResellerClub Gateway API",
       "registrarTxId": "RC-TXN-984210",
       "registrationDate": "2026-02-15T10:15:00.000Z",
-      "expiryDate": "2027-02-15T10:15:00.000Z",
-      "renewalDate": "2027-02-15T10:15:00.000Z",
+      "expiryDate": "2029-02-15T10:15:00.000Z",
+      "renewalDate": "2029-02-15T10:15:00.000Z",
       "registrationPeriodYears": 1,
       "registrationPrice": 849,
       "renewalPrice": 999,
@@ -554,6 +572,41 @@
         "email": "client@techstart.io",
         "mobile": "+91 9876543210",
         "address": "MG Road",
+        "city": "Bengaluru",
+        "state": "Karnataka",
+        "postalCode": "560001",
+        "country": "India"
+      }
+    },
+    {
+      "id": "DOM-6685",
+      "domainName": "testportability-mwag4on7.com",
+      "customerId": "CUST-2001",
+      "customerEmail": "client@techstart.io",
+      "registrar": "Nexora Authoritative ICANN Registry Connector",
+      "registrarTxId": "TXN-ICANN-MWAG4ON7-8453",
+      "registrationDate": "2026-11-10T08:46:39.043Z",
+      "expiryDate": "2027-11-10T08:46:39.043Z",
+      "renewalDate": "2027-11-10T08:46:39.043Z",
+      "registrationPeriodYears": 1,
+      "registrationPrice": 849,
+      "renewalPrice": 999,
+      "status": "active",
+      "autoRenew": true,
+      "privacyProtected": true,
+      "locked": true,
+      "eppCode": "EPP-3WNUZ82V!38",
+      "nameservers": [
+        "cloe.ns.cloudflare.com",
+        "walt.ns.cloudflare.com"
+      ],
+      "registrantDetails": {
+        "firstName": "Acceptance",
+        "lastName": "Tester",
+        "company": "Authoritative Portability Labs",
+        "email": "client@techstart.io",
+        "mobile": "+91 9988776655",
+        "address": "42 MG Road",
         "city": "Bengaluru",
         "state": "Karnataka",
         "postalCode": "560001",
@@ -717,6 +770,46 @@
       "content": "mandavitestbusiness.com",
       "ttl": 3600,
       "createdAt": "2026-11-08T09:48:25.038Z"
+    },
+    {
+      "id": "DNS-1794300399045-1",
+      "domainId": "DOM-6685",
+      "domainName": "testportability-mwag4on7.com",
+      "type": "A",
+      "name": "@",
+      "content": "159.65.132.88",
+      "ttl": 3600,
+      "createdAt": "2026-11-10T08:46:39.043Z"
+    },
+    {
+      "id": "DNS-1794300399045-2",
+      "domainId": "DOM-6685",
+      "domainName": "testportability-mwag4on7.com",
+      "type": "CNAME",
+      "name": "www",
+      "content": "testportability-mwag4on7.com",
+      "ttl": 3600,
+      "createdAt": "2026-11-10T08:46:39.043Z"
+    },
+    {
+      "id": "DNS-1794300399048-A-EXT",
+      "domainId": "DOM-6685",
+      "domainName": "testportability-mwag4on7.com",
+      "type": "A",
+      "name": "@",
+      "content": "104.21.55.19",
+      "ttl": 300,
+      "createdAt": "2026-11-10T08:46:39.048Z"
+    },
+    {
+      "id": "DNS-1794300399049-CNAME-EXT",
+      "domainId": "DOM-6685",
+      "domainName": "testportability-mwag4on7.com",
+      "type": "CNAME",
+      "name": "app",
+      "content": "custom-tenant.externalhost.com",
+      "ttl": 300,
+      "createdAt": "2026-11-10T08:46:39.049Z"
     }
   ],
   "orders": [
@@ -955,6 +1048,71 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "LOG-1794302606793",
+      "adminId": "SYSTEM",
+      "adminEmail": "system@nexoracloud.com",
+      "action": "CUSTOMER_GOOGLE_REGISTERED",
+      "entityType": "customer",
+      "entityId": "CUST-1006",
+      "newValue": {
+        "email": "testuser99@gmail.com",
+        "fullName": "Rahul Verma",
+        "googleId": "google_sub_99887711"
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-10T09:23:26.793Z"
+    },
+    {
+      "id": "LOG-1794300425907",
+      "adminId": "CUST-2001",
+      "adminEmail": "client@techstart.io",
+      "action": "DOMAIN_RENEWED",
+      "entityType": "domain",
+      "entityId": "DOM-3001",
+      "newValue": {
+        "domainName": "techstartapp.com",
+        "periodYears": 2,
+        "oldExpiry": "2027-02-15T10:15:00.000Z",
+        "newExpiry": "2029-02-15T10:15:00.000Z"
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-10T08:47:05.907Z"
+    },
+    {
+      "id": "LOG-1794300399131",
+      "adminId": "ADM-1001",
+      "adminEmail": "admin@nexoracloud.com",
+      "action": "REAL_WORLD_ACCEPTANCE_TEST_EXECUTED",
+      "entityType": "settings",
+      "entityId": "TEST-ACCEPT-MWAG4ON7",
+      "newValue": {
+        "testDomain": "testportability-mwag4on7.com",
+        "allPassed": true,
+        "stepCount": 10
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-10T08:46:39.132Z"
+    },
+    {
+      "id": "LOG-1794300399046",
+      "adminId": "CUST-2001",
+      "adminEmail": "client@techstart.io",
+      "action": "REAL_DOMAIN_REGISTERED",
+      "entityType": "domain",
+      "entityId": "DOM-6685",
+      "newValue": {
+        "domainName": "testportability-mwag4on7.com",
+        "registrarTxId": "TXN-ICANN-MWAG4ON7-8453",
+        "registrarDomainId": "REG-ID-18903499"
+      },
+      "result": "success",
+      "ipAddress": "127.0.0.1",
+      "timestamp": "2026-11-10T08:46:39.043Z"
+    },
     {
       "id": "LOG-1794131323529",
       "adminId": "ADM-1001",
@@ -1209,6 +1367,16 @@
     }
   ],
   "notifications": [
+    {
+      "id": "NOTIF-1794302606794",
+      "recipientEmail": "testuser99@gmail.com",
+      "recipientId": "CUST-1006",
+      "type": "ACCOUNT_CREATED",
+      "subject": "Welcome to Nexora Cloud Platform",
+      "messageHtml": "<p>Hello Rahul Verma, your customer account (CUST-1006) has been created automatically using your Google Account. You can now register domains, deploy websites, and manage cloud services seamlessly.</p>",
+      "isRead": false,
+      "sentAt": "2026-11-10T09:23:26.794Z"
+    },
     {
       "id": "NOTIF-1794131305043",
       "recipientEmail": "client@techstart.io",
